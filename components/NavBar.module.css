@@ -2,47 +2,61 @@
 
 .navbar {
     display: flex;
-    justify-content: space-between; /* Space between logo and nav links */
-    align-items: center; /* Center items vertically */
-    background-color: #333;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EE849D;
     padding: 1rem;
-    height: 60px; /* Set height to ensure proper spacing */
 }
 
 .logoContainer {
-    display: flex;
-    align-items: center; /* Center logo vertically */
-    flex: 1; /* Flex 1 allows logo to take available space */
-}
-
-.logo {
-    height: 50px; /* Set height of the logo */
-    width: auto; /* Keep aspect ratio */
+    flex: 1;
 }
 
 .navLinks {
-    display: flex;
-    align-items: center; /* Align the links and buttons vertically */
-    justify-content: flex-end; /* Push links to the right */
-    flex: 1; /* Ensure this section takes equal space */
+    flex: 1;
+    text-align: right;
+}
+
+.profileContainer {
+    position: relative;
+    display: inline-block;
 }
 
 .greeting {
-    color: white;
-    margin-right: 20px; /* Space between greeting and button */
+    cursor: pointer; /* Change cursor to pointer for interactivity */
+    color: white; /* Ensure text is readable */
+    margin-right: 10px; /* Space between greeting and dropdown */
+}
+
+.dropdown {
+    position: absolute;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+.dropdownItem {
+    display: block;
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.dropdownItem:hover {
+    background-color: #f0f0f0;
 }
 
 .loginButton {
     color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
-    background-color: #0070f3; /* Button background color */
+    background-color: #f4b3c1;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
-    font-weight: bold;
-    cursor: pointer;
 }
 
 .loginButton:hover {
-    background-color: #8500b5; /* Darker background on hover */
+    background-color: #f4ccd5;
+    color: #b3727f;
 }
