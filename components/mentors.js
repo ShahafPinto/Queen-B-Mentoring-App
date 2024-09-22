@@ -8,6 +8,9 @@ export default function Mentors() {
                 <MentorCard />
                 <MentorCard />
                 <MentorCard />
+                <MentorCard />
+                <MentorCard />
+                <MentorCard />
             </div>
         </div>
     )
