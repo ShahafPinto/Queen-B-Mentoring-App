@@ -1,26 +1,22 @@
-
-
+'use client'
 import styles from "./page.module.css";
-export default function Form() {
-    async function createInvoice(formData) {
-        'use server'
-     
-        const rawFormData = {
-          customerId: formData.get('customerId'),
-          amount: formData.get('amount'),
-          status: formData.get('status'),
-        }
-     
-        // mutate data
-        // revalidate cache
-      }
 
+export default function Form() {
+    const FormAction = async (formData) =>{
+        const rawFormData = {
+          firstName: formData.get('first name'),
+          familyName: formData.get('family name'),
+          Email: formData.get('email'),
+        }
+        console.log(rawFormData)
+      }
+      
   return (
     <>
       <div>
         <h1 className={styles.h1}>טופס הרשמה</h1>
       </div>
-      <form className={styles.form} action={createInvoice}>
+      <form className={styles.form} action={FormAction}>
         <fieldset>
           <legend>מי את ?</legend>
           <div>
@@ -37,7 +33,7 @@ export default function Form() {
         </fieldset>
         <label>
           שם פרטי:
-          <input type="text" name="first name" />
+          <input type="text" name="first name"/>
         </label>
         <label>
           שם משפחה:
