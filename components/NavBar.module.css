@@ -38,14 +38,15 @@
 }
 
 .dropdownItem {
-    display: block;
+    display: flex; /* Use flex to center align */
+    justify-content: center; /* Center horizontally */
     padding: 10px 20px;
-    color: black;
+    color: #871831;
     text-decoration: none;
 }
 
 .dropdownItem:hover {
-    background-color: #f0f0f0;
+    background-color: #f4ccd5;
 }
 
 .loginButton {
@@ -53,7 +54,7 @@
     text-decoration: none;
     padding: 0.5rem 1rem;
     background-color: #f4b3c1;
-    border-radius: 5px;
+    border-radius: 2px;
 }
 
 .loginButton:hover {
