@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image';
 import _img from '@/app/public/images/pro.jpg'
+import styles from "./components.module.css";
 
 export default function MentorCard() {
     const mentorName = "Jane Doe";
@@ -9,7 +10,7 @@ export default function MentorCard() {
     const languages = ["JavaScript", "Python", "Ruby", "HTML", "CSS"];
 
     return (
-        <div className="mentor-card">
+        <div className= {styles.mentorCard}>
             <Image 
             src={_img} 
             alt={`${mentorName} Image`} 
@@ -17,64 +18,67 @@ export default function MentorCard() {
             height={150}
             quality={100}
             unoptimized={true}
-            className="mentor-img"
+            className={styles.mentorImg}
+            priority={true} // הוספת המאפיין priority
             />
             <h2>{mentorName}</h2>
             <p>{mentorDescription}</p>
             <h3>Languages:</h3>
-            <ul className="languages-list">
+            <ul className={styles.languagesList}>
                 {languages.map((language, index) => (
-                    <li key={index} className="language-item">{language}</li>
+                    <li key={index} className={styles.languageItem}>{language}</li>
                 ))}
             </ul>
-            <style>{`
-            .mentor-card {
-                border: 0.0625rem solid #ccc;
-                padding: 1.25rem;
-                margin: 1.25rem;
-                border-radius: 0.625rem;
-                width: 100%;
-                max-width: 20rem;
-                text-align: center;
-                box-shadow: 0.125rem 0.125rem 0.75rem rgba(0, 0, 0, 0.1);
-                overflow: hidden;
-            }
-
-            .mentor-img {
-                border-radius: 50%;
-                object-fit: cover;
-                margin-bottom: 0.9375rem;
-            }
-
-            ul {
-                list-style-type: none;
-                padding: 0;
-            }
-
-            .languages-list {
-                display: flex;
-                justify-content: center;
-                gap: 0.5rem;
-                padding: 0.625rem;
-                border-radius: 0.625rem;
-                flex-wrap: wrap;
-                max-width: 100%;
-            }
-
-            .language-item {
-                background-color: #d1e7dd;
-                padding: 0.25rem 0.5rem; /* הקטנת הרווחים הפנימיים */
-                border-radius: 0.375rem; /* הקטנת עיגול הפינות */
-                color: #0f5132;
-                font-weight: bold;
-                font-size: 0.75rem; /* הקטנת גודל הטקסט */
-                box-shadow: 0.0625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.1);
-            }
-
-            li {
-                margin: 0.25rem; /* הקטנת הרווחים בין התגים */
-            }
-            `}</style>
         </div>
     );
 }
+
+
+// 'use client'
+// import Image from 'next/image';
+// import _img from '@/app/public/images/pro.jpg';
+// import styles from './components.module.css';
+
+// export default function MentorCard() {
+//     const mentorName = "Jane Doe";
+//     const mentorDescription = "Full Stack Developer at Tech Innovators";
+//     const languages = ["JavaScript", "Python", "Ruby", "HTML", "CSS"];
+
+//     // יצירת אלמנטים בצורה דינמית ב-JavaScript רגיל
+//     const cardDiv = document.createElement('div');
+//     cardDiv.className = styles.mentorCard;
+
+//     const img = new Image();
+//     img.src = _img;
+//     img.alt = `${mentorName} Image`;
+//     img.width = 150;
+//     img.height = 150;
+//     img.className = styles.mentorImg;
+//     cardDiv.appendChild(img);
+
+//     const h2 = document.createElement('h2');
+//     h2.textContent = mentorName;
+//     cardDiv.appendChild(h2);
+
+//     const p = document.createElement('p');
+//     p.textContent = mentorDescription;
+//     cardDiv.appendChild(p);
+
+//     const h3 = document.createElement('h3');
+//     h3.textContent = "Languages:";
+//     cardDiv.appendChild(h3);
+
+//     const ul = document.createElement('ul');
+//     ul.className = styles.languagesList;
+
+//     languages.forEach(language => {
+//         const li = document.createElement('li');
+//         li.textContent = language;
+//         li.className = styles.languageItem;
+//         ul.appendChild(li);
+//     });
+
+//     cardDiv.appendChild(ul);
+
+//     document.body.appendChild(cardDiv); // מוסיפים את הכרטיס לעמוד
+// }
