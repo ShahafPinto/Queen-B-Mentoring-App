@@ -1,35 +1,15 @@
-// import MentorCard from "./mentorCard";
-// import styles from "./mentors.module.css";
-
-// export default function Mentors() {
-//     return (
-//         <div>
-//             <h1>list of mentors</h1>
-//             <div className={styles.mentorsCards}>
-              
-//                     <MentorCard />
-//                     <MentorCard />
-//                     <MentorCard />
-//                     <MentorCard />
-//                     <MentorCard />
-//                     <MentorCard />
-             
-//             </div>
-//         </div>
-//     )
-// }
-'use client'
+'use client';
 
 import { useState } from "react";
 import MentorCard from "./mentorCard";
-import ZoomInCard from "./zoomInCard"; // ייבוא הקומפוננטה של זום-אין
+import ZoomInCard from "./zoomInCard"; 
 import styles from "./mentors.module.css";
 
 export default function Mentors() {
     // הגדרת state כדי לעקוב אחרי המנטור שנבחר
     const [selectedMentor, setSelectedMentor] = useState(null);
 
-    // רשימת מנטורים לדוגמה (אפשר להשתמש גם בנתונים דינמיים)
+    // רשימת מנטורים לדוגמה
     const mentors = [
         { id: 1, name: "Jane Doe", description: "Full Stack Developer", languages: ["JavaScript", "Python", "HTML"] },
         { id: 2, name: "John Smith", description: "Backend Developer", languages: ["Java", "Node.js", "SQL"] },
@@ -53,6 +33,7 @@ export default function Mentors() {
             <div className={styles.mentorsCards}>
                 {mentors.map((mentor) => (
                     <div key={mentor.id} onClick={() => handleMentorClick(mentor)}>
+                        {/* העברת הנתונים על המנטור כ-props */}
                         <MentorCard 
                             mentorName={mentor.name}
                             mentorDescription={mentor.description}
@@ -66,7 +47,7 @@ export default function Mentors() {
             {selectedMentor && (
                 <ZoomInCard 
                     mentor={selectedMentor} 
-                    onClose={closeZoomInCard} // העברת פונקציה לסגירה
+                    onClose={closeZoomInCard} 
                 />
             )}
         </div>
