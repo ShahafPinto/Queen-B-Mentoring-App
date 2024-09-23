@@ -16,7 +16,7 @@ export default function Form() {
       <div>
         <h1 className={styles.h1}>טופס הרשמה</h1>
       </div>
-      <form className={styles.form} action={FormAction}>
+      <form className={styles.form} action={FormAction} autocomplete="on">
         <fieldset>
           <legend>מי את ?</legend>
           <div>
@@ -24,7 +24,7 @@ export default function Form() {
             <label for="mentor">מנטורית</label>
             <input
               type="radio"
-              id="client type"
+              id="student"
               name="client type"
               value="student"
             />
@@ -45,19 +45,19 @@ export default function Form() {
         </label>
         <label>
           Email:
-          <input type="email" id="email" name="email" />
+          <input type="email" id="email" name="email" autocomplete="on"/>
         </label>
         <label>
           טלפון:
-          <input type="tel" id="tel" name="tel" />
+          <input type="tel" id="tel" name="tel" autocomplete="off"/>
         </label>
         <label>
           קישור לפרופיל לינקדאין:
-          <input type="url" id="url" name="url" />
+          <input type="url" id="linkdin" name="linkdin" autocomplete="off"/>
         </label>
         <label>
           ספרי על עצמך:
-          <textarea cols="50" rows="8"></textarea>
+          <textarea name="about" cols="50" rows="8" autocomplete="off"></textarea>
         </label>
         <fieldset>
           <legend>מהן שפות התכנות בהן תרצי להדריך?</legend>
@@ -88,7 +88,7 @@ export default function Form() {
         </fieldset>
         <label>
           שם החברה בה עובדת כיום:
-          <input type="text" name="company" />
+          <input type="text" name="company" autocomplete="off"/>
         </label>
         <label>
           תפקיד בחברה:
@@ -106,7 +106,7 @@ export default function Form() {
 
         <div>
           <label for="username">שם משתמש:</label>
-          <input type="text" id="username" name="username" />
+          <input type="text" id="username" name="username" autocomplete="off"/>
         </div>
         <div>
           <label for="pass">סיסמא (8 תווים לפחות):</label>
@@ -114,11 +114,12 @@ export default function Form() {
             type="password"
             id="pass"
             name="password"
-            minlength="8"
+            minLength="8"
+            autocomplete="off"
             required
           />
         </div>
-        <button type="submit" >לחצי לסיום הרשמה</button>
+        <button type="submit" id="submit">לחצי לסיום הרשמה</button>
       </form>
     </>
   );
