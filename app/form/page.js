@@ -1,16 +1,29 @@
 'use client'
 import styles from "./page.module.css";
+import { useRouter } from 'next/navigation'
+import {db} from '@/app/public/data.js'
 
 export default function Form() {
     const FormAction = async (formData) =>{
         const rawFormData = {
           firstName: formData.get('first name'),
           familyName: formData.get('family name'),
-          Email: formData.get('email'),
+          email: formData.get('email'),
         }
-        console.log(rawFormData)
+        db.push(rawFormData)
+        console.log('db:', db)
       }
-      
+    
+    const submitClickedHandler = (event) => {
+        event.preventDefault();
+        const form = document.querySelector('form');
+        const formData = new FormData(form);
+        FormAction(formData);
+        router.push('/main')
+      };
+
+      const router = useRouter()
+
   return (
     <>
       <div>
@@ -119,7 +132,7 @@ export default function Form() {
             required
           />
         </div>
-        <button type="submit" id="submit">לחצי לסיום הרשמה</button>
+        <button type="submit" id="submit" onClick={submitClickedHandler}>לחצי לסיום הרשמה</button>
       </form>
     </>
   );
