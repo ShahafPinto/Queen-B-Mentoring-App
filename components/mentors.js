@@ -6,14 +6,14 @@ export default function Mentors() {
         <div>
             <h1>list of mentors</h1>
             <div className={styles.mentorsCards}>
-                <div>
+              
                     <MentorCard />
                     <MentorCard />
                     <MentorCard />
                     <MentorCard />
                     <MentorCard />
                     <MentorCard />
-                </div>
+             
             </div>
         </div>
     )

@@ -1,4 +1,8 @@
 .mentorsCards{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    /* display: inline-grid; */
+    /* grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); */
+    display: flex;
+    flex-wrap: wrap; /* עוטף את הכרטיסיות לשורות */
+    justify-content: center; /* מרכז את הכרטיסיות */
+    gap: 0.5px; /* רווחים בין הכרטיסיות */
   }
