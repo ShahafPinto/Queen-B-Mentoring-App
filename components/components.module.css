@@ -1,13 +1,28 @@
 .mentorCard {
+    --background: #ffffff;
+    --foreground: #171717;
     border: 0.0625rem solid #ccc;
     padding: 1.25rem;
     margin: 1.25rem;
     border-radius: 0.625rem;
-    width: 100%;
+    width: 200%;
     max-width: 20rem;
     text-align: center;
     box-shadow: 0.125rem 0.125rem 0.75rem rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    background: var(--background); /* שימוש במשתנה הרקע */
+    color: var(--foreground);      /* שימוש במשתנה הצבע */
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+@media (prefers-color-scheme: dark) {
+    .mentorCard {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
 }
 
 .mentorImg {
@@ -36,5 +51,5 @@
     font-weight: bold;
     font-size: 0.75rem;
     box-shadow: 0.0625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.1);
-    margin: 0.25rem; /* הקטנת הרווחים בין התגים */
+    margin: 0.25rem; /* הקטנת הרווחים בין התגים */
 }
