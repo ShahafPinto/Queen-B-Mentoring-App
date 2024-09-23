@@ -3,33 +3,56 @@
     --foreground: #171717;
     border: 0.0625rem solid #ccc;
     padding: 1.25rem;
-    margin: 1.25rem;
+    /* margin: 1.25rem; */
     border-radius: 0.625rem;
-    width: 200%;
-    max-width: 20rem;
+    width: 100%; /* שומר על רוחב של 100% */
+    max-width: 250px; /* מקסימום רוחב לכרטיסייה */
+    min-height: 450px; /* העלאה של גובה מינימלי */
+    height: auto; /* מאפשר גובה דינמי */
     text-align: center;
-    box-shadow: 0.125rem 0.125rem 0.75rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* שיפור ה- box-shadow */
     overflow: hidden;
-    background: var(--background); /* שימוש במשתנה הרקע */
-    color: var(--foreground);      /* שימוש במשתנה הצבע */
+    background: var(--background);
+    color: var(--foreground);
     font-family: Arial, Helvetica, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-@media (prefers-color-scheme: dark) {
+/* גודל קבוע לתמונות */
+.mentorImg {
+    width: 120px; /* רוחב קבוע לתמונה */
+    height: 120px; /* גובה קבוע לתמונה */
+    border-radius: 50%;
+    object-fit: cover; /* שמירה על יחס ממדים */
+    margin-bottom: 0.9375rem;
+    margin: 0 auto 0.9375rem auto; /* מרכוז התמונה */
+}
+
+
+
+/* הגדרה רספונסיבית למסכים קטנים */
+@media (max-width: 768px) {
+    .mentorCard {
+        width: 100%; /* הכרטיסייה תתפוס את כל הרוחב במסכים קטנים */
+        max-width: none; /* לבטל את ה-max-width במסכים קטנים */
+    }
+}
+
+
+/* @media (prefers-color-scheme: dark) {
     .mentorCard {
         --background: #0a0a0a;
         --foreground: #ededed;
     }
-}
+} */
 
-.mentorImg {
+/* .mentorImg {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 0.9375rem;
-}
+} */
 
 .languagesList {
     list-style-type: none;
