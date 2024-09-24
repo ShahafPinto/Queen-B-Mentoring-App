@@ -17,6 +17,7 @@ export default function Home() {
         // Implement actual DB search and routing here
     };
 
+
     return (
         <div className={styles.container}>
             <div className={styles.navBar}>
