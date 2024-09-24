@@ -10,9 +10,8 @@ export default function Home() {
       username: formData.get('username'),
       password: formData.get('password'),
     }
-
-
-
+  
+  
     //חיפוש בDB האם קיים שם משתמש וסיסמא
     //אם כן להגדיר משתמש מחובר ולהעביר לעמוד main
     // אם לא- להציג הודעת שגיאה ולהגיד שנדרש להתחבר
