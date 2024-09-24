@@ -1,11 +1,13 @@
 'use client'
 import styles from "./page.module.css";
 import { useRouter } from 'next/navigation'
-import {POST} from '@/app/api/register.js'
+//import {POST} from '@/app/actions/register.js'
+//react hookForm
 
 export default function Form() {
+    let rawFormData = {};
     const FormAction = async (formData) =>{
-        const rawFormData = {
+        rawFormData = {
         user_type: formData.get('user type'),
         first_name: formData.get('first name'),
         family_name: formData.get('family name'),
@@ -26,7 +28,6 @@ export default function Form() {
         job_title: formData.get('job'),
         username: formData.get('username'),
         password: formData.get('password')
-
         }
         console.log('rawFormData:', rawFormData)
         //POST(rawFormData)

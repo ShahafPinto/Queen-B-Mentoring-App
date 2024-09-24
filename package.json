@@ -1,11 +1,7 @@
-
 {
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  
-  
-  
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -13,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/env": "^14.2.13",
     "next": "14.2.11",
     "pg": "^8.13.0",
     "react": "^18",

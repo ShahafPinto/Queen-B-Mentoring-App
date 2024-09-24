@@ -1,5 +1,9 @@
 import { query } from '/app/lib/db.js'
 
+
+// This function is called when the form is submitted
+// It inserts the form data into the database
+
 export async function POST(req) {
   const body = await req.json();  // Get the form data from the request
 
