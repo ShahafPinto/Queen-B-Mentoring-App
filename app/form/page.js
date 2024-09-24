@@ -49,17 +49,7 @@ export default function Form() {
             console.error('Failed to register:', error)
         }
       };
-
-    // const submitClickedHandler = (event) => {
-    //     event.preventDefault();
-    //     const form = document.querySelector('form');
-    //     const formData = new FormData(form);
-    //     FormAction(formData);
-    //     router.push('/main')
-    //   };
-
       
-
     const userTypeCleckedHandler = (event) => {
         const userType = event.target.value
         console.log('userType:', userType)
