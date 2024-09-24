@@ -1,7 +1,8 @@
 'use client'
 import Link from "next/link";
 import styles from "./page.module.css";
-import NavBar from "/components/navBar"
+import NavBar from "/components/navBar";
+import {db} from '@/app/public/data.js';
 
 export default function Home() {
   const FormAction = async (formData) =>{
@@ -9,7 +10,8 @@ export default function Home() {
       username: formData.get('username'),
       password: formData.get('password'),
     }
-
+  
+  
     //חיפוש בDB האם קיים שם משתמש וסיסמא
     //אם כן להגדיר משתמש מחובר ולהעביר לעמוד main
     // אם לא- להציג הודעת שגיאה ולהגיד שנדרש להתחבר
