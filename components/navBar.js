@@ -8,7 +8,7 @@ import Image from 'next/image'
 
 const NavBar = () => {
 
-    const [isLoggedIn, setIsLoggedIn] = useState(false); // Manage login state
+    const [isLoggedIn, setIsLoggedIn] = useState(true); // Manage login state
     const username = "User"; // Replace with dynamic username if available
 
     const handleLoginToggle = () => {
