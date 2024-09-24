@@ -4,8 +4,8 @@
     display: flex;
     justify-content: space-between; /* Space between logo and nav links */
     align-items: center; /* Center items vertically */
-    background-color: #333;
-    padding: 1rem;
+    background-color: #ee849d;
+    padding: 1.5rem;
     height: 60px; /* Set height to ensure proper spacing */
 }
 
@@ -14,6 +14,8 @@
     align-items: center; /* Center logo vertically */
     flex: 1; /* Flex 1 allows logo to take available space */
 }
+
+
 
 .logo {
     height: 50px; /* Set height of the logo */
@@ -29,7 +31,7 @@
 
 .greeting {
     color: white;
-    margin-right: 20px; /* Space between greeting and button */
+    margin-right: 50px; /* Space between greeting and button */
 }
 
 .loginButton {
