@@ -20,7 +20,7 @@ export default function Form() {
         <fieldset>
           <legend>מי את ?</legend>
           <div>
-            <input type="radio" id="mentor" name="client type" value="mentor" />
+            <input type="radio" id="mentor" name="user type" value="mentor" />
             <label for="mentor">מנטורית</label>
             <input
               type="radio"
