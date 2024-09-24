@@ -5,9 +5,10 @@ import { useRouter } from 'next/navigation'
 //react hookForm
 
 export default function Form() {
-    let rawFormData = {};
+    const router = useRouter()
+
     const FormAction = async (formData) =>{
-        rawFormData = {
+        const rawFormData = {
         user_type: formData.get('user type'),
         first_name: formData.get('first name'),
         family_name: formData.get('family name'),
@@ -31,18 +32,24 @@ export default function Form() {
         }
         console.log('rawFormData:', rawFormData)
         //POST(rawFormData)
-      }
-
-    const submitClickedHandler = (event) => {
-        event.preventDefault();
-        const form = document.querySelector('form');
-        const formData = new FormData(form);
-        FormAction(formData);
-        router.push('/main')
+        try{
+            const response = await fetch('/api/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(rawFormData),
+            });
+            if(response.ok){
+                router.push('/main')
+            }else{
+                console.error('Failed to register:', await response.json())
+            }
+        }catch(error){
+            console.error('Failed to register:', error)
+        }
       };
-
-      const router = useRouter()
-
+      
     const userTypeCleckedHandler = (event) => {
         const userType = event.target.value
         console.log('userType:', userType)
