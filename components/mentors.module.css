@@ -1,4 +1,7 @@
-.mentorsCards{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
+.mentorsCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* יוצר עמודות רספונסיביות */
+  gap: 10px; /* קביעת רווח קבוע בין הכרטיסיות */
+  padding: 20px;
+  justify-items: center; /* מרכז את הכרטיסיות */
+}
