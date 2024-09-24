@@ -1,19 +1,37 @@
 'use client'
 import styles from "./page.module.css";
 import { useRouter } from 'next/navigation'
-import {db} from '@/app/public/data.js'
+import {POST} from '@/app/api/register.js'
 
 export default function Form() {
     const FormAction = async (formData) =>{
         const rawFormData = {
-          firstName: formData.get('first name'),
-          familyName: formData.get('family name'),
-          email: formData.get('email'),
+        user_type: formData.get('user type'),
+        first_name: formData.get('first name'),
+        family_name: formData.get('family name'),
+        email: formData.get('email'),
+        tel: formData.get('tel'),
+        city: formData.get('city'),
+        linkedin: formData.get('linkedin'),
+        about: formData.get('about'),
+        programming_languages: [
+          formData.get('js'),
+          formData.get('html'),
+          formData.get('css'),
+          formData.get('java'),
+          formData.get('csharp'),
+          formData.get('python')
+        ],
+        company: formData.get('company'),
+        job_title: formData.get('job'),
+        username: formData.get('username'),
+        password: formData.get('password')
+
         }
-        db.push(rawFormData)
-        console.log('db:', db)
+        console.log('rawFormData:', rawFormData)
+        //POST(rawFormData)
       }
-    
+
     const submitClickedHandler = (event) => {
         event.preventDefault();
         const form = document.querySelector('form');
@@ -24,6 +42,22 @@ export default function Form() {
 
       const router = useRouter()
 
+    const userTypeCleckedHandler = (event) => {
+        const userType = event.target.value
+        console.log('userType:', userType)
+        if (userType === 'student') {
+            document.querySelector('input[name="company"]').disabled = true
+            document.querySelector('input[name="job"]').disabled = true
+            document.querySelector('input[name="js"]').disabled = true
+            document.querySelector('input[name="html"]').disabled = true
+            document.querySelector('input[name="css"]').disabled = true
+            document.querySelector('input[name="python"]').disabled = true
+            document.querySelector('input[name="csharp"]').disabled = true
+            document.querySelector('input[name="java"]').disabled = true
+            document.querySelector('input[name="avatar"]').disabled = true
+        }
+    }
+    
   return (
     <>
       <div>
@@ -33,13 +67,14 @@ export default function Form() {
         <fieldset>
           <legend>מי את ?</legend>
           <div>
-            <input type="radio" id="mentor" name="user type" value="mentor" />
+            <input type="radio" id="mentor" name="user type" value="mentor" onClick={userTypeCleckedHandler}/>
             <label for="mentor">מנטורית</label>
             <input
               type="radio"
               id="student"
-              name="client type"
+              name="user type"
               value="student"
+              onClick={userTypeCleckedHandler}
             />
             <label for="student">מנטית</label>
           </div>
@@ -75,27 +110,27 @@ export default function Form() {
         <fieldset>
           <legend>מהן שפות התכנות בהן תרצי להדריך?</legend>
           <div>
-            <input type="checkbox" id="js" name="interest" value="js" />
+            <input type="checkbox" id="js" value="js" name="js"/>
             <label for="js">Java Script</label>
           </div>
           <div>
-            <input type="checkbox" id="html" name="interest" value="html" />
+            <input type="checkbox" id="html"  value="html" name="html"/>
             <label for="html">HTML</label>
           </div>
           <div>
-            <input type="checkbox" id="css" name="interest" value="css" />
+            <input type="checkbox" id="css"  value="css" name="css"/>
             <label for="css">CSS</label>
           </div>
           <div>
-            <input type="checkbox" id="java" name="interest" value="java" />
+            <input type="checkbox" id="java"  value="java" name="java"/>
             <label for="java">JAVA</label>
           </div>
           <div>
-            <input type="checkbox" id="csharp" name="interest" value="csharp" />
+            <input type="checkbox" id="csharp"  value="csharp" name="csharp"/>
             <label for="csharp">C#</label>
           </div>
           <div>
-            <input type="checkbox" id="python" name="interest" value="python" />
+            <input type="checkbox" id="python"  value="python" name="python"/>
             <label for="python">Python</label>
           </div>
         </fieldset>

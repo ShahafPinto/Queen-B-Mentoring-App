@@ -12,3 +12,5 @@ export async function query(text, params){
     const res = await pool.query(text, params);
     return res;
 }
+
+
