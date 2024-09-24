@@ -68,7 +68,7 @@ async function createTableAndInsertRows() {
                 programing_languages: 'Java, Ruby',
                 company: 'CodeWorks',
                 job_title: 'Backend Developer',
-                avatar_url: 'https://example.com/bob.jpg',
+                avatar_url: '/app/public/images/avatars/avatar1.svg',
                 username: 'bob321',
                 password: 'securepass'
             }
