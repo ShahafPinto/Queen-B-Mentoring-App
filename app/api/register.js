@@ -1,3 +1,4 @@
+//import 'server-only'
 import { query } from '/app/lib/db.js'
 
 
