@@ -1,5 +1,5 @@
 //import 'server-only'
-import { query } from '/app/lib/db.js'
+import { query } from '../db.js'
 
 
 // This function is called when the form is submitted

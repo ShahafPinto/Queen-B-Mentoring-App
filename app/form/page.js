@@ -33,7 +33,7 @@ export default function Form() {
         console.log('rawFormData:', rawFormData)
         
         try{
-            const response = await fetch('/api/register', {
+            const response = await fetch('app/api/register/route.js', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
