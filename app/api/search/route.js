@@ -1,33 +1,34 @@
-import query from '../db'; 
-
-export default async function handler(req, res) {
-  const { searchTerm } = req.query;
+import { NextResponse } from 'next/server';
+import {myquery} from '../db'; 
+export async function GET(request) {
+  const { searchParams } = new URL(request.url);
+  const searchTerm = searchParams.get('myquery');
 
   try {
     let users;
-    if (searchTerm){
+    if (searchTerm) {
       const searchQuery = `
       SELECT * FROM users
       WHERE LOWER(first_name) LIKE $1 OR
        LOWER(family_name) LIKE $1 OR EXISTS 
-       (SELECT 1  FROM json_array_elements_text(programing_languages) as pl
+       (SELECT 1 FROM json_array_elements_text(programing_languages) as pl
        WHERE LOWER(pl) LIKE $1) OR
        LOWER(job_title) LIKE $1
       `;
 
-      users = await query(searchQuery, [`%${searchTerm.toLowerCase()}%`]);
+      users = await myquery(searchQuery, [`%${searchTerm.toLowerCase()}%`]);
     } else {
       const allMentorsQuery = 'SELECT * FROM users';
-      users = await query(allMentorsQuery);
+      users = await myquery(allMentorsQuery);
     }
 
     if (!users || !users.rows) {
-      throw new Error('No results returned from database');
+      return NextResponse.json({ error: 'No results found' }, { status: 404 });
     }
 
-    res.status(200).json(users.rows); 
+    return NextResponse.json(users.rows);
   } catch (error) {
     console.error('Error querying database:', error);
-    res.status(500).json({ error: 'Error fetching mentors' });
+    return NextResponse.json({ error: 'Error fetching mentors' }, { status: 500 });
   }
 }
