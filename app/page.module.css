@@ -8,13 +8,13 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   letter-spacing: 1px;
   line-height: 1.2;
-  transition: transform 0.3s ease, color 0.3s ease; /* Adding transition for scale effect */
+
   cursor: default; /* Prevents the text selection cursor on hover */
 }
 
 .title:hover {
-  transform: scale(1.01); /* Slightly increases the size */
-  color: #ee849d; /* Change color on hover */
+  transform: scale(1.1); /* Slightly increases the size */
+
 }
 
 .container {
