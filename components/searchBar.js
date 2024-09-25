@@ -18,27 +18,21 @@ const SearchPage = () => {
     const value = event.target.value;
     setSearchTerm(value);
 
-    const response = await fetch(`/api/search?query=${value}`);
-    const mentors = await response.json();
+    try {
+        const response = await fetch(`/api/search?query=${value}`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
 
-    setResults(mentors);
-  };
+        const mentors = await response.json();
 
-  useEffect(() => {
-    const fetchAllMentors = async () => {
-      const response = await fetch(`/api/search`);
-      const mentors = await response.json();
-      setResults(mentors);
-    };
-    fetchAllMentors();
-  }, []);
+        setResults(mentors);
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        setResults([]);
+    }
+};
 
-
-    // const filteredResults = data.filter(item =>
-    //   item.name.toLowerCase().includes(value.toLowerCase()) ||
-    //   item.language.toLowerCase().includes(value.toLowerCase())
-    // );
-    // setResults(filteredResults);
     return (
         <div style={{ padding: '20px' }}>
           <h1>Search Mentors</h1>
