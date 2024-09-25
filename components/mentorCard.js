@@ -110,7 +110,7 @@
 
 'use client';
 import Image from 'next/image';
-import _img from '@/app/public/images/pro.jpg'; // ברירת מחדל לתמונה
+import _img from '/app/public/images/pro.jpg'; 
 import styles from "./components.module.css";
 
 // קבלת הפרטים של המנטור דרך props

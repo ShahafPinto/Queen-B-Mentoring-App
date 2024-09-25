@@ -1,4 +1,4 @@
-import NavBar from "@/components/navBar";
+
 import Gstyles from "./globals.css";
 import styles from "./page.module.css";
 
@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <div className={Gstyles.navBar}>
-          <NavBar />
+
         </div>
         <div className={Gstyles.container}>
           {children}
