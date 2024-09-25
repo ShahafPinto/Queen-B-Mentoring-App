@@ -1,51 +1,91 @@
 'use client'
 import Link from "next/link";
 import styles from "./page.module.css";
-import NavBar from "/components/navBar";
-import { db } from '@/app/public/data.js';
+import NavBar from "/components/NavBar"; // Import the NavBar component
+//import { db } from '@/app/public/data.js';
+import {useRouter} from "next/navigation";
+import React, { useEffect } from 'react';
+import axios from 'axios'; // Ensure axios is imported
+import { FaAngleLeft } from 'react-icons/fa6';
 
 export default function Home() {
-    const FormAction = async (formData) => {
-        const rawFormData = {
-            username: formData.get('username'),
-            password: formData.get('password'),
-        };
+    const router = useRouter();
 
-        // Placeholder for form action logic (DB search, user authentication, error handling)
-        console.log(rawFormData);
+    const [user, setUser] = React.useState({
+        email: '',
+        password: '',
+    });
 
-        // Implement actual DB search and routing here
+    const [buttonDisabled, setButtonDisabled] = React.useState(false);
+    const [loading, setLoading] = React.useState(false);
+
+    const onLogin = async () => {
+        try {
+            setLoading(true);
+            //http://localhost:3001/
+            const response = await axios.post('api/users/login', user);
+            console.log('Login successful', response.data);
+            //router.push('/profile');
+        } finally {
+            setLoading(false);
+        }
     };
 
+    useEffect(() => {
+        if (user.email.length > 0 && user.password.length > 0) {
+            setButtonDisabled(false);
+        } else {
+            setButtonDisabled(true);
+        }
+    }, [user]);
+
+    console.log(user);
 
     return (
-        <div className={styles.container}>
-            <div className={styles.navBar}>
-                {NavBar()}
-            </div>
-            <h1 className={styles.title}>Find Your Mentor</h1>
+        <div className="flex flex-col items-center justify-center min-h-screen py-2">
+            <NavBar /> {NavBar}
 
-            <form className={styles.form} autoComplete="on" onSubmit={FormAction}>
-                <div className={styles.formGroup}>
-                    <label htmlFor="username">Username:</label>
-                    <input type="text" id="username" name="username" autoComplete="off" className={styles.input}/>
-                </div>
-                <div className={styles.formGroup}>
-                    <label htmlFor="password">Password:</label>
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        minLength="8"
-                        autoComplete="off"
-                        required
-                        className={styles.input}
-                    />
-                </div>
-                <button type="submit" className={styles.button}>Submit</button>
-            </form>
-            <Link href="/form" className={styles.link}>
-                Don't have an account yet? Click here
+            <h1 className="py-10 mb-10 text-5xl">
+                {loading ? "We're logging you in..." : 'Account Login'}
+            </h1>
+
+            <input
+                className="w-[350px] text-slate-800 p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+                id="email"
+                type="text"
+                value={user.email}
+                onChange={(e) => setUser({ ...user, email: e.target.value })}
+                placeholder="Email"
+            />
+
+            <input
+                className="w-[350px] text-slate-800 p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+                id="password"
+                type="password"
+                value={user.password}
+                onChange={(e) => setUser({ ...user, password: e.target.value })}
+                placeholder="Password"
+            />
+
+            <button
+                onClick={onLogin}
+                className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-600 uppercase px-40 py-3 mt-10 font-bold"
+                disabled={buttonDisabled || loading} // Disable the button if conditions are met
+            >
+                Login
+            </button>
+
+            <Link href="/form">
+                <p className="mt-10">
+                    Do not have an account yet?
+                    <span className="font-bold text-green-600 ml-2 cursor-pointer underline">
+                        Register
+                    </span>
+                </p>
+            </Link>
+
+            <Link href="/">
+                <p className="mt-8 opacity-50"></p>
             </Link>
         </div>
     );

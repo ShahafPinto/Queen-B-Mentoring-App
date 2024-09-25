@@ -217,7 +217,31 @@ async function createTableAndInsertRows() {
         client.release();
         pool.end();
     }
+
 }
 
+//query db for user - select * from users where user_email = input
+
+export async function getUserByUsername(username) {
+    try {
+        // Query to select user where username matches the input
+        const query = 'SELECT * FROM users WHERE username = username';
+        const values = [username];
+
+        const result = await pool.query(query, values);
+
+        // Check if a user was found
+        if (result.rows.length > 0) {
+            return result.rows[0]; // Return the first matching user
+        } else {
+            return null; // No user found
+        }
+    } catch (error) {
+        console.error('Database query error:', error);
+        throw new Error('Failed to retrieve user');
+    }
+}
+
+export default getUserByUsername;
 
 createTableAndInsertRows().then(result => {});
