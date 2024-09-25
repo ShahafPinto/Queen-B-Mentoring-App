@@ -1,7 +1,6 @@
 'use client'
 import Link from "next/link";
 import styles from "./page.module.css";
-import NavBar from "/components/navBar";
 import { db } from '@/app/public/data.js';
 
 export default function Home() {
@@ -17,14 +16,9 @@ export default function Home() {
         // Implement actual DB search and routing here
     };
 
-
     return (
         <div className={styles.container}>
-            <div className={styles.navBar}>
-                {NavBar()}
-            </div>
             <h1 className={styles.title}>Find Your Mentor</h1>
-
             <form className={styles.form} autoComplete="on" onSubmit={FormAction}>
                 <div className={styles.formGroup}>
                     <label htmlFor="username">Username:</label>
