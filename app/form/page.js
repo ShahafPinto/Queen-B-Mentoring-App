@@ -1,6 +1,7 @@
 'use client'
 import styles from "./page.module.css";
 import { useRouter } from 'next/navigation'
+import Gstyles from "../globals.css";
 
 //react hookForm
 
@@ -68,14 +69,16 @@ export default function Form() {
     
   return (
     <>
-      <div>
-        <h1 className={styles.h1}>טופס הרשמה</h1>
-      </div>
+    <div className={Gstyles.container}>
+      
+        <h1 className={styles.title}>טופס הרשמה</h1>
+      
+      
       <form className={styles.form} action={FormAction} autocomplete="on">
-        <fieldset>
+        <fieldset className="formGroup">
           <legend>מי את ?</legend>
           <div>
-            <input type="radio" id="mentor" name="user type" value="mentor" onClick={userTypeCleckedHandler}/>
+            <input className={styles.input} type="radio" id="mentor" name="user type" value="mentor" onClick={userTypeCleckedHandler}/>
             <label for="mentor">מנטורית</label>
             <input
               type="radio"
@@ -83,72 +86,73 @@ export default function Form() {
               name="user type"
               value="student"
               onClick={userTypeCleckedHandler}
+              className={styles.input}
             />
             <label for="student">מנטית</label>
           </div>
         </fieldset>
         <label>
           שם פרטי:
-          <input type="text" name="first name"/>
+          <input className={styles.input} type="text" name="first name"/>
         </label>
         <label>
           שם משפחה:
-          <input type="text" name="family name" />
+          <input className={styles.input} type="text" name="family name" />
         </label>
         <label>
           עיר מגורים:
-          <input type="text" name="city" />
+          <input className={styles.input} type="text" name="city" />
         </label>
         <label>
           Email:
-          <input type="email" id="email" name="email" autocomplete="on"/>
+          <input className={styles.input} type="email" id="email" name="email" autocomplete="on"/>
         </label>
         <label>
           טלפון:
-          <input type="tel" id="tel" name="tel" autocomplete="off"/>
+          <input className={styles.input} type="tel" id="tel" name="tel" autocomplete="off"/>
         </label>
         <label>
           קישור לפרופיל לינקדאין:
-          <input type="url" id="linkdin" name="linkdin" autocomplete="off"/>
+          <input className={styles.input} type="url" id="linkdin" name="linkdin" autocomplete="off"/>
         </label>
         <label>
           ספרי על עצמך:
-          <textarea name="about" cols="50" rows="8" autocomplete="off"></textarea>
+          <textarea className={styles.input} name="about" cols="50" rows="8" autocomplete="off"></textarea>
         </label>
         <fieldset>
           <legend>מהן שפות התכנות בהן תרצי להדריך?</legend>
           <div>
-            <input type="checkbox" id="js" value="js" name="js"/>
+            <input className={styles.input} type="checkbox" id="js" value="js" name="js"/>
             <label for="js">Java Script</label>
           </div>
           <div>
-            <input type="checkbox" id="html"  value="html" name="html"/>
+            <input className={styles.input} type="checkbox" id="html"  value="html" name="html"/>
             <label for="html">HTML</label>
           </div>
           <div>
-            <input type="checkbox" id="css"  value="css" name="css"/>
+            <input className={styles.input} type="checkbox" id="css"  value="css" name="css"/>
             <label for="css">CSS</label>
           </div>
           <div>
-            <input type="checkbox" id="java"  value="java" name="java"/>
+            <input className={styles.input} type="checkbox" id="java"  value="java" name="java"/>
             <label for="java">JAVA</label>
           </div>
           <div>
-            <input type="checkbox" id="csharp"  value="csharp" name="csharp"/>
+            <input className={styles.input} type="checkbox" id="csharp"  value="csharp" name="csharp"/>
             <label for="csharp">C#</label>
           </div>
           <div>
-            <input type="checkbox" id="python"  value="python" name="python"/>
+            <input className={styles.input} type="checkbox" id="python"  value="python" name="python"/>
             <label for="python">Python</label>
           </div>
         </fieldset>
         <label>
           שם החברה בה עובדת כיום:
-          <input type="text" name="company" autocomplete="off"/>
+          <input className={styles.input} type="text" name="company" autocomplete="off"/>
         </label>
         <label>
           תפקיד בחברה:
-          <input type="text" name="job" />
+          <input className={styles.input} type="text" name="job" />
         </label>
         <div>
           <label for="avatar">תמונת פרופיל</label>
@@ -157,12 +161,13 @@ export default function Form() {
             id="avatar"
             name="avatar"
             accept="image/png, image/jpeg"
+            className={styles.input}
           />
         </div>
 
         <div>
           <label for="username">שם משתמש:</label>
-          <input type="text" id="username" name="username" autocomplete="off"/>
+          <input className={styles.input} type="text" id="username" name="username" autocomplete="off" required/>
         </div>
         <div>
           <label for="pass">סיסמא (8 תווים לפחות):</label>
@@ -173,10 +178,13 @@ export default function Form() {
             minLength="8"
             autocomplete="off"
             required
+            className={styles.input}
           />
         </div>
-        <button type="submit" id="submit">לחצי לסיום הרשמה</button>
+        <button className={styles.button} type="submit" id="submit">לחצי לסיום הרשמה</button>
       </form>
+      </div>
+      
     </>
   );
 }

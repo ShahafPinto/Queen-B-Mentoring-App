@@ -2,6 +2,23 @@
   background: #f5e1e5;
 }
 
-
-
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10vh;
+  background-color: #f5e1e5;
+  font-family: Arial, sans-serif;
+}
+.navBar {
+  position: fixed; /* Keeps it in place even when scrolling */
+  top: 0; /* Keeps it at the top of the page */
+  left: 0;
+  width: 100%; /* Full width */
+  padding: 0px 0;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it's always on top of other elements */
+  
+}
 
