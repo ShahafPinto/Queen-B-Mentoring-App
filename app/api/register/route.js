@@ -1,5 +1,5 @@
 //import 'server-only'
-import { query } from '/db.js'
+import { query } from '../db.js'
 
 
 // This function is called when the form is submitted
@@ -9,9 +9,14 @@ export async function POST(req) {
   const body = await req.json();  // Get the form data from the request
 
   const {
-    user_type, first_name, family_name, city, email, tel, linkedin, about,
+    user_type, first_name, family_name, city, email, tel, linkedin='', about,
     programming_languages, company, job_title, username, password
   } = body;
+
+  console.log({
+    user_type, first_name, family_name, city, email, tel, linkedin, about,
+    programming_languages, company, job_title, username, password
+  }, "=========================")
 
   try {
     // Insert the form data into the database
