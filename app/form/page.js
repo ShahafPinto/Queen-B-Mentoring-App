@@ -8,8 +8,9 @@ export default function Form() {
     const router = useRouter()
 
     const FormAction = async (formData) =>{
+        
         const rawFormData = {
-        user_type: formData.get('user type'),
+        user_type: (formData.get('user type') == 'mentor') ? true : false,
         first_name: formData.get('first name'),
         family_name: formData.get('family name'),
         email: formData.get('email'),
@@ -30,10 +31,11 @@ export default function Form() {
         username: formData.get('username'),
         password: formData.get('password')
         }
+        console.log( "======================="),
         console.log('rawFormData:', rawFormData)
         
         try{
-            const response = await fetch('app/api/register/route.js', {
+            const response = await fetch('/api/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -41,7 +43,7 @@ export default function Form() {
                 body: JSON.stringify(rawFormData),
             });
             if(response.ok){
-                router.push('/main')
+                router.push('/homePage')
             }else{
                 console.error('Failed to register:', await response.json())
             }
@@ -71,7 +73,7 @@ export default function Form() {
       <div>
         <h1 className={styles.h1}>טופס הרשמה</h1>
       </div>
-      <form className={styles.form} action={FormAction} autocomplete="on">
+      <form className={styles.form} action={FormAction} autoComplete="on">
         <fieldset>
           <legend>מי את ?</legend>
           <div>

@@ -9,9 +9,11 @@ export async function POST(req) {
   const body = await req.json();  // Get the form data from the request
 
   const {
-    user_type, first_name, family_name, city, email, tel, linkedin, about,
+    user_type, first_name, family_name, city, email, tel, linkedin='', about,
     programming_languages, company, job_title, username, password
   } = body;
+
+  console.log(body, "=========================")
 
   try {
     // Insert the form data into the database
