@@ -1,4 +1,4 @@
-import Mentors from "@/components/mentors.js";
+import Mentors from "/components/mentors.js";
 import SearchBar from "/components/searchBar.js";
 import styles from "./page.module.css";
 
