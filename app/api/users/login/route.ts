@@ -11,7 +11,7 @@ export async function POST(request: NextRequest)
         console.log(reqBody);
 
         // 2- check if this user exists by checking it's email before login
-        const user = getUserByUsername(email);
+        const user = await getUserByUsername(email);
         // no valid user
         if (!user) {
             return NextResponse.json(
@@ -21,24 +21,28 @@ export async function POST(request: NextRequest)
                 { status: 400 }
             );
         }
+        console.log('console.log(user);');
         console.log(user);
 
         // 3- check if the password is correct
         // password is coming from the request
         // user.password is coming from the DB
-        console.log('TESTTTTTTTTTTTT');
-        const validPassword = password == user.password
+        console.log('console.log(user);');
+        const validPassword = user.password
+
         // not valid password
-        if (!validPassword) {
+        if (validPassword!=reqBody.password)
+        {
+            console.log('NOT OKAY')
             return NextResponse.json({ error: 'Invalid password' }, { status: 400 });
         }
-
+        console.log('OKAY')
         // 4- create the TOKEN data
-        const tokenData = {
-            id: user._id,
-            username: user.username,
-            email: user.email,
-        };
+        //const tokenData = {
+        //    id: user._id,
+        //    username: user.username,
+        //    email: user.email,
+        //};
 
         // 4.1 - create TOKEN
         //const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET!, {
@@ -46,15 +50,20 @@ export async function POST(request: NextRequest)
         //});
 
         // user's cookies
-        const response = NextResponse.json({
+        const response = NextResponse.json(
+            {
             message: 'Login Successful',
             success: true,
         });
 
         // 4.2- send TOKEN to user's cookies
         //response.cookies.set('token', token, { httpOnly: true });
-        //return response;
-    } catch (error: any) {
+        console.log(response);
+        console.log('ENDENDENDENDENDEN');
+        return response;
+    }
+    catch (error: any)
+    {
         return NextResponse.json({ error: error.message }, { status: 500 });
     }
 }

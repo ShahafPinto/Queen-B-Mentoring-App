@@ -2,7 +2,6 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import NavBar from "/components/NavBar"; // Import the NavBar component
-//import { db } from '@/app/public/data.js';
 import {useRouter} from "next/navigation";
 import React, { useEffect } from 'react';
 import axios from 'axios'; // Ensure axios is imported
@@ -22,16 +21,31 @@ export default function Home() {
     const onLogin = async () => {
         try {
             setLoading(true);
-            //http://localhost:3001/
             const response = await axios.post('api/users/login', user);
+
             console.log('Login successful', response.data);
-            //router.push('/profile');
+
+            if (response.status === 200) { // Assuming 200 means login success
+                router.push('/homePage');
+            } else {
+                console.log('Login failed');
+            }
+        } catch (error) {
+            // Here, catch the error and handle it
+            if (error.response && error.response.status === 400) {
+                // Handle 400 errors specifically (like invalid credentials)
+                console.error('Login failed:', error.response.data);
+            } else {
+                // Handle other errors like network issues
+                console.error('An error occurred:', error.message);
+            }
         } finally {
             setLoading(false);
         }
     };
 
-    useEffect(() => {
+    useEffect(() =>
+    {
         if (user.email.length > 0 && user.password.length > 0) {
             setButtonDisabled(false);
         } else {
@@ -43,7 +57,7 @@ export default function Home() {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
-            <NavBar /> {NavBar}
+            <NavBar />
 
             <h1 className="py-10 mb-10 text-5xl">
                 {loading ? "We're logging you in..." : 'Account Login'}

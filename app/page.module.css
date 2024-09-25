@@ -1,110 +1,96 @@
 /* page.module.css */
-.title {
-  color:white;
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin: 20px 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  letter-spacing: 1px;
-  line-height: 1.2;
 
-  cursor: default; /* Prevents the text selection cursor on hover */
-}
-
-.title:hover {
-  transform: scale(1.1); /* Slightly increases the size */
-
-}
-
+/* Container Styles */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: #f5e1e5;
-  font-family: Arial, sans-serif;
-}
-
-.h1 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 2rem;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: #faf6f6;
+  min-height: 100vh; /* Full viewport height */
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9; /* Light background */
 }
 
-.formGroup {
-  margin-bottom: 1.5rem;
+/* Heading Styles */
+.h1 {
+  padding: 2rem 0;
+  margin-bottom: 2rem;
+  font-size: 2.5rem; /* Responsive heading size */
+  color: #333; /* Dark color for contrast */
+  text-align: center;
 }
 
-.label {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-}
-
+/* Input Styles */
 .input {
-  width: 100%;
-  padding: 0.8rem;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
+  width: 350px;
+  padding: 0.5rem;
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 0.5rem; /* Rounded corners */
+  margin-bottom: 1rem;
+  font-size: 1rem; /* Standard font size */
+  transition: border 0.3s; /* Transition for focus effect */
 }
 
 .input:focus {
-  outline: none;
-  border-color: #f5e1e5;
+  outline: none; /* Remove default outline */
+  border-color: #4A90E2; /* Change border color on focus */
 }
 
+/* Button Styles */
 .button {
-  padding: 0.8rem 5.5rem;
-  margin: 20px;
-  font-size: 1.1rem;
-  color: #fff;
-  background-color: #ee849d;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  padding: 0.5rem 2rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background-color: #4A90E2; /* Primary button color */
+  color: white; /* Text color for button */
+  font-weight: bold;
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
 }
 
-.button:hover {
-  background-color: #edb4c1;
+.button:disabled {
+  background-color: #ccc; /* Disabled button color */
+  cursor: not-allowed; /* Not allowed cursor */
 }
 
+.button:hover:not(:disabled) {
+  background-color: #357ABD; /* Darker button color on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Link Styles */
 .link {
-  margin-top: 1.5rem;
-  color: #ee849d;
-  text-decoration: none;
-  font-size: 1rem;
-  text-decoration: white; /* Remove underline */
-  transition: color 0.3s ease; /* Smooth color transition */
+  margin-top: 1rem;
+  color: #4A90E2; /* Link color */
 }
 
 .link:hover {
-  color: #ee849d; /* Darker shade on hover */
-  text-decoration: none; /* Ensure no underline on hover */
-  transform: scale(1.05); /* Optional: scale effect on hover */
+  text-decoration: underline; /* Underline on hover */
+}
+
+.link span {
+  font-weight: bold; /* Bold text for emphasis */
+  color: #27AE60; /* Green color for 'Register' link */
+}
+
+/* Small adjustments for the footer link */
+.footer-link {
+  margin-top: 0.5rem;
+  opacity: 0.5; /* Light opacity */
 }
 
 
+
 /* Sticky NavBar CSS */
-.navBar {
-  position: fixed; /* Keeps it in place even when scrolling */
-  top: 0; /* Keeps it at the top of the page */
-  left: 0;
-  width: 100%; /* Full width */
-  padding: 0px 0;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000; /* Ensure it's always on top of other elements */
+.navbar {
+  position: sticky; /* Makes the NavBar sticky */
+  top: 0; /* Stick to the top */
+  width: 100px; /* Full width */
+  background-color: #fff; /* White background for visibility */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  z-index: 1000; /* Ensure it stays above other content */
+  padding: 1rem 2rem; /* Padding for the navbar */
+  display: flex; /* Flexbox layout */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Center items vertically */
 }
