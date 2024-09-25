@@ -7,6 +7,7 @@
     background-color: #ee849d;
     padding: 1.5rem;
     height: 60px; /* Set height to ensure proper spacing */
+
 }
 
 .logoContainer {
@@ -32,6 +33,7 @@
 .greeting {
     color: white;
     margin-right: 50px; /* Space between greeting and button */
+    cursor: default;
 }
 
 .loginButton {
