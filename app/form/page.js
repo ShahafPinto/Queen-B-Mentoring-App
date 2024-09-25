@@ -1,7 +1,7 @@
 'use client'
 import styles from "./page.module.css";
 import { useRouter } from 'next/navigation'
-//import {POST} from '@/app/actions/register.js'
+
 //react hookForm
 
 export default function Form() {
@@ -31,7 +31,7 @@ export default function Form() {
         password: formData.get('password')
         }
         console.log('rawFormData:', rawFormData)
-        //POST(rawFormData)
+        
         try{
             const response = await fetch('/api/register', {
                 method: 'POST',
@@ -175,7 +175,7 @@ export default function Form() {
             required
           />
         </div>
-        <button type="submit" id="submit" onClick={submitClickedHandler}>לחצי לסיום הרשמה</button>
+        <button type="submit" id="submit">לחצי לסיום הרשמה</button>
       </form>
     </>
   );
