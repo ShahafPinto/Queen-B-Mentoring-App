@@ -141,7 +141,7 @@ async function createTableAndInsertRows() {
         email VARCHAR(100) UNIQUE NOT NULL,
         tel VARCHAR(14),
         about TEXT,
-        programing_languages VARCHAR(255),
+        programing_languages JSON,
         company VARCHAR(100),
         job_title VARCHAR(100),
         avatar_url VARCHAR(255),
