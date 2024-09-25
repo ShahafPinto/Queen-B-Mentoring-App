@@ -1,5 +1,7 @@
 import { query } from '../db';
 
+export async function GET() {}
+
 export async function GET() {
   try {
     const result = await query('SELECT * FROM users');

@@ -1,7 +1,21 @@
+/* .mentorsCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 10px; 
+  padding: 20px;
+  justify-items: center; 
+}
+ */
+
 .mentorsCards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* יוצר עמודות רספונסיביות */
-  gap: 10px; /* קביעת רווח קבוע בין הכרטיסיות */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* יותר רספונסיבי */
+  gap: 20px;
   padding: 20px;
-  justify-items: center; /* מרכז את הכרטיסיות */
+}
+
+@media (max-width: 600px) {
+  .mentorsCards {
+    grid-template-columns: 1fr; /* מסך קטן - כל כרטיס יתפוס שורה מלאה */
+  }
 }

@@ -7,6 +7,7 @@ import React, { useEffect } from 'react';
 import axios from 'axios'; // Ensure axios is imported
 import { FaAngleLeft } from 'react-icons/fa6';
 
+
 export default function Home() {
     const router = useRouter();
 
