@@ -1,7 +1,7 @@
 'use client'
 import styles from "./page.module.css";
 import { useRouter } from 'next/navigation'
-import Gstyles from "../globals.css";
+import classes from "../globals.css";
 import Image from 'next/image';
 import { useState } from "react";
 
@@ -82,7 +82,7 @@ export default function Form() {
     
   return (
     <>
-    <div className={Gstyles.container}>
+    <div className={styles.container}>
       
         <h1 className={styles.title}>טופס הרשמה</h1>
       

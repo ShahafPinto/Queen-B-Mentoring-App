@@ -10,6 +10,8 @@
   min-height: 100vh; /* Full viewport height */
   padding: 2rem;
   background-color: #f5e1e5; /* Light background */
+  direction: rtl;
+
 }
 
 .title {
@@ -54,7 +56,6 @@
 
 .input:focus {
   outline: none; /* Remove default outline */
-  color: var(--color-secondary); /* Change border color on focus */
 }
 
 /* Button Styles */
@@ -63,7 +64,6 @@
   border: 1px solid #ccc;
   border-radius: 0.5rem;
   color: var(--color-primary); /* Primary button color */
-  color: white; /* Text color for button */
   font-weight: bold;
   cursor: pointer; /* Change cursor to pointer */
   transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */

@@ -22,13 +22,24 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   letter-spacing: 1px;
   line-height: 1.2;
-
+  margin-top: 120px;
   cursor: default; /* Prevents the text selection cursor on hover */
 }
 
 .title:hover {
   transform: scale(1.1); /* Slightly increases the size */
 
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5e1e5;
+  font-family: Arial, sans-serif;
+  direction: rtl;
+  margin-top: -20px;
 }
 
 /* .container {
