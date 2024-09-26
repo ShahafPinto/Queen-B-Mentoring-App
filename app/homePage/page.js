@@ -7,9 +7,7 @@ export default function Main() {
     <div>
       <h1 className={styles.h1}>המנטוריות שלנו</h1>
       <div className={styles.search}>
-      <div >
           <SearchBar/>
-      </div>
       </div>
         <Mentors />
     </div>
