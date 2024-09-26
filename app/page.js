@@ -85,7 +85,7 @@ export default function Home() {
                 className={styles.button}
                 disabled={buttonDisabled || loading} // Disable the button if conditions are met
             >
-                Login
+                התחברי
             </button>
 
             <Link href="/form">
