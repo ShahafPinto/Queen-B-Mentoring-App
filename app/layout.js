@@ -1,5 +1,5 @@
 
-import Gstyles from "./globals.css";
+import styles from "./globals.css";
 import NavBar from "./components/navBar";
 
 export const metadata = {
@@ -11,10 +11,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className={Gstyles.navBar}>
+        <div className={styles.navbar}>
           <NavBar/>
         </div>
-        <div >
+        <div>
           {children}
         </div>
       </body>

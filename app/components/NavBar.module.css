@@ -1,16 +1,6 @@
 /* components/NavBar.module.css */
 
-.navbar {
-    position: fixed;
-    display: flex;
-    justify-content: space-between; /* Space between logo and nav links */
-    align-items: center; /* Center items vertically */
-    background-color: #ee849d;
-    padding: 1.5rem;
-    height: 60px; /* Set height to ensure proper spacing */
-    width: 100%;
-    font-family: "Nunito", sans-serif;
-}
+
 
 .logoContainer {
     display: flex;
@@ -51,4 +41,18 @@
 
 .loginButton:hover {
     background-color: #8500b5; /* Darker background on hover */
+}
+
+
+.navbar {
+    position: relative;
+    position: fixed;
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav links */
+    align-items: center; /* Center items vertically */
+    background-color: #ee849d;
+    padding: 1.5rem;
+    height: 60px; /* Set height to ensure proper spacing */
+    width: 100%;
+    font-family: "Nunito", sans-serif;
 }
