@@ -1,7 +1,6 @@
 'use client'
 import Link from "next/link";
 import styles from "./page.module.css";
-import NavBar from "/components/NavBar"; // Import the NavBar component
 import {useRouter} from "next/navigation";
 import React, { useEffect } from 'react';
 import axios from 'axios'; // Ensure axios is imported
@@ -66,15 +65,12 @@ export default function Home() {
     console.log(user);
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen py-2">
-            <NavBar />
-
-            <h1 className="py-10 mb-10 text-5xl">
+        <div className={styles.container}>
+            <h1 className={styles.h1}>
                 {loading ? "We're logging you in..." : 'Account Login'}
             </h1>
-
             <input
-                className="w-[350px] text-slate-800 p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+                className={styles.input}
                 id="email"
                 type="text"
                 value={user.email}
@@ -83,7 +79,7 @@ export default function Home() {
             />
 
             <input
-                className="w-[350px] text-slate-800 p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+                className={styles.input}
                 id="password"
                 type="password"
                 value={user.password}
@@ -93,23 +89,23 @@ export default function Home() {
 
             <button
                 onClick={onLogin}
-                className="p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-600 uppercase px-40 py-3 mt-10 font-bold"
+                className={styles.button}
                 disabled={buttonDisabled || loading} // Disable the button if conditions are met
             >
                 Login
             </button>
 
             <Link href="/form">
-                <p className="mt-10">
+                <p className={styles.link}>
                     Do not have an account yet?
-                    <span className="font-bold text-green-600 ml-2 cursor-pointer underline">
+                    <span className={styles.link}>
                         Register
                     </span>
                 </p>
             </Link>
 
             <Link href="/">
-                <p className="mt-8 opacity-50"></p>
+                <p></p>
             </Link>
         </div>
     );
