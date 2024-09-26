@@ -1,6 +1,6 @@
 
 import Gstyles from "./globals.css";
-import styles from "./page.module.css";
+import NavBar from "../components/navBar";
 
 export const metadata = {
   title: "QueenB mentoring matching app", 
@@ -12,12 +12,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <div className={Gstyles.navBar}>
-
+          <NavBar />
         </div>
         <div className={Gstyles.container}>
           {children}
         </div>
-        
       </body>
     </html>
   );

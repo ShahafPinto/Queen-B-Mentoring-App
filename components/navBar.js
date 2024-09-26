@@ -6,7 +6,7 @@ import styles from './NavBar.module.css';
 import { useState } from 'react';
 import Image from 'next/image'
 
-const NavBar = () => {
+export default function NavBar () {
 
     const [isLoggedIn, setIsLoggedIn] = useState(true); // Manage login state
     const username = "User"; // Replace with dynamic username if available
@@ -39,4 +39,3 @@ const NavBar = () => {
     );
 };
 
-export default NavBar;
