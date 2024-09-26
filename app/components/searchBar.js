@@ -45,6 +45,7 @@ const SearchPage = () => {
   };
 
   return (
+    <div>
     <div className={styles.searchBarContainer}>
       <h1 className={styles.searchBarHeader}>חפשי מנטורית</h1>
       <input
@@ -54,7 +55,12 @@ const SearchPage = () => {
         onChange={handleSearch} 
         className={styles.searchInput}
       />
-      <Mentors mentors={results} />
+      
+    </div>
+  <div className={styles.mentorsCards}>
+  <Mentors mentors={results} />
+  </div>
+   
     </div>
   );
 };
