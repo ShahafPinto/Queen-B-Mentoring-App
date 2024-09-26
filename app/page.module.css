@@ -20,6 +20,7 @@
   transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover transition */
   cursor: default; /* No text select cursor */
   color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
 }
 
 /* Hover effect */

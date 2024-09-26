@@ -1,9 +1,15 @@
 .h1 {
+  font-size: 4rem;
   text-align: center; 
   font-family: "Nunito", sans-serif;
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
   margin-bottom: 20px;
+  margin: 20px 0;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: default;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .search {
