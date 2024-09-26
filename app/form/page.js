@@ -11,7 +11,6 @@ export default function Form() {
     const router = useRouter()
     const [mentor, setMentor] = useState(false);
     
-    
     const imageArray = [
       '/images/svg/avatar1.svg',
       '/images/svg/avatar4.svg',
