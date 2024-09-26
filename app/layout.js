@@ -1,6 +1,6 @@
 
 import Gstyles from "./globals.css";
-import NavBar from "../components/navBar";
+import NavBar from "./components/navBar";
 
 export const metadata = {
   title: "QueenB mentoring matching app", 

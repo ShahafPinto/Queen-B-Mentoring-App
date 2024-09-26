@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faLinkedin } from '@fortawesome/free-brands-svg-icons'; // ייבוא אייקונים WhatsApp ולינקדאין
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'; // ייבוא אייקון אימייל
-import _img from '/app/public/images/pro.jpg'; // ברירת מחדל לתמונה
+//import _img from '/app/public/images/pro.jpg'; // ברירת מחדל לתמונה
 import styles from './zoomInCard.module.css';
 
 export default function ZoomInCard({ mentor, onClose }) {
@@ -25,7 +25,7 @@ export default function ZoomInCard({ mentor, onClose }) {
             <div className={styles.cardContainer}>
                 {/* תמונת המנטור */}
                 <Image 
-                    src={mentor.avatar_url ? mentor.avatar_url : _img}  // שימוש בתמונה ברירת מחדל אם avatarUrl לא קיים
+                    src={mentor.avatar_url ? mentor.avatar_url : '/images/pro.jpg'}  // שימוש בתמונה ברירת מחדל אם avatarUrl לא קיים
                     alt={`${mentor.first_name} ${mentor.family_name} Image`} 
                     width={150} 
                     height={150}
