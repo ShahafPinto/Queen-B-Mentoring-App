@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
         <div className={Gstyles.navBar}>
           <NavBar />
         </div>
-        <div className={Gstyles.container}>
+        <div >
           {children}
         </div>
       </body>
