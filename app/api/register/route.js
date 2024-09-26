@@ -1,5 +1,5 @@
 //import 'server-only'
-import { query } from '../db.js'
+import { myquery } from '../db.js'
 
 
 // This function is called when the form is submitted
@@ -20,7 +20,7 @@ export async function POST(req) {
 
   try {
     // Insert the form data into the database
-    const result = await query(`
+    const result = await myquery(`
       INSERT INTO users 
       (user_type, first_name, family_name, city, email, tel, linkedin, about, 
       programing_languages, company, job_title, username, password)
