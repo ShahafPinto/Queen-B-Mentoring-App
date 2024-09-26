@@ -4,21 +4,11 @@ import styles from "./page.module.css";
 import {useRouter} from "next/navigation";
 import React, { useEffect } from 'react';
 import axios from 'axios'; // Ensure axios is imported
-import { FaAngleLeft } from 'react-icons/fa6';
 
 
 export default function Home() {
     const router = useRouter();
-    // const FormAction = async (formData) => {
-    //     const rawFormData = {
-    //         username: formData.get('username'),
-    //         password: formData.get('password'),
-    //     };
 
-    //     // Placeholder for form action logic (DB search, user authentication, error handling)
-    //     console.log(rawFormData);
-    //     // Implement actual DB search and routing here
-    // };
     const [user, setUser] = React.useState({
         email: '',
         password: '',
@@ -66,16 +56,19 @@ export default function Home() {
 
     return (
         <div className={styles.container}>
+            <h1 className={styles.title}>
+                {'Queens Match'}
+            </h1>
             <h1 className={styles.h1}>
-                {loading ? "We're logging you in..." : 'Account Login'}
+                {loading ? "We're logging you in..." : 'ברוכה הבאה'}
             </h1>
             <input
                 className={styles.input}
-                id="email"
+                id="username"
                 type="text"
-                value={user.email}
+                value={user.username}
                 onChange={(e) => setUser({ ...user, email: e.target.value })}
-                placeholder="Email"
+                placeholder="שם משתמש"
             />
 
             <input
@@ -84,7 +77,7 @@ export default function Home() {
                 type="password"
                 value={user.password}
                 onChange={(e) => setUser({ ...user, password: e.target.value })}
-                placeholder="Password"
+                placeholder="סיסמה"
             />
 
             <button
@@ -97,9 +90,9 @@ export default function Home() {
 
             <Link href="/form">
                 <p className={styles.link}>
-                    Do not have an account yet?
+                    עוד אין לך משתמש?
                     <span className={styles.link}>
-                        Register
+                        הירשמי
                     </span>
                 </p>
             </Link>

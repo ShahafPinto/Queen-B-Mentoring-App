@@ -1,5 +1,25 @@
 :root {
-  background: #f5e1e5;
+  --color-primary: #EE849D;
+  --color-secondary: #F0B9C6;
+  --color-accent1: #bcbcbc;
+  --color-accent2: #ffffff;
+  --color-light: #f3d7dc;
+  --color-background: #f5e1e5;
+
+  
+  --font-weight-light: 200;
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
+  --font-weight-extraBold: 900;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+
+.nunitoFont {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .container {
@@ -10,8 +30,10 @@
   margin-top: 10vh;
   background-color: #f5e1e5;
   font-family: Arial, sans-serif;
+  direction: rtl;
 }
 .navBar {
+
   position: fixed; /* Keeps it in place even when scrolling */
   top: 0; /* Keeps it at the top of the page */
   left: 0;
@@ -19,6 +41,26 @@
   padding: 0px 0;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000; /* Ensure it's always on top of other elements */
-  
+
+}
+
+.fontLight {
+  font-weight: var(--font-weight-light);
+}
+
+.fontNormal {
+  font-weight: var(--font-weight-normal);
+}
+
+.fontBold {
+  font-weight: var(--font-weight-bold);
+}
+
+.fontExtraBold {
+  font-weight: var(--font-weight-extraBold);
+}
+
+body {
+  background-color: var(--color-background);
 }
 
