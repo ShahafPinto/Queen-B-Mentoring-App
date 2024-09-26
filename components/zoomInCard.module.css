@@ -114,3 +114,20 @@
 .closeButton:hover {
     background-color: #0056b3;
 }
+
+
+.whatsappButton {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #25D366; /* הצבע של WhatsApp */
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.whatsappButton:hover {
+    background-color: #128C7E; /* צבע כהה יותר של WhatsApp */
+}
