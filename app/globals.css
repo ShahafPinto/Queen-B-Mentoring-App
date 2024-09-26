@@ -30,6 +30,7 @@
   margin-top: 10vh;
   background-color: #f5e1e5;
   font-family: Arial, sans-serif;
+  direction: rtl;
 }
 .navBar {
 
@@ -43,7 +44,6 @@
 
 }
 
-/* Example of font weight utility classes */
 .fontLight {
   font-weight: var(--font-weight-light);
 }
@@ -60,7 +60,6 @@
   font-weight: var(--font-weight-extraBold);
 }
 
-/* Apply background color */
 body {
   background-color: var(--color-background);
 }

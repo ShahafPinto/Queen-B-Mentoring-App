@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Mentors from './mentors';
+import styles from './searchBar.module.css';
 
 const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState(''); 
@@ -44,19 +45,14 @@ const SearchPage = () => {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Search Mentors</h1>
+    <div className={styles.searchBarContainer}>
+      <h1 className={styles.searchBarHeader}>חפשי מנטורית</h1>
       <input
         type="text"
-        placeholder="Search by name or programming language"
+        placeholder="חפשי את המנטורית שלך לפי שם, שפת תכנות או מקצוע.."
         value={searchTerm}
         onChange={handleSearch} 
-        style={{
-          padding: '10px',
-          fontSize: '16px',
-          marginBottom: '20px',
-          width: '300px',
-        }}
+        className={styles.searchInput}
       />
       <Mentors mentors={results} />
     </div>
