@@ -2,14 +2,32 @@
 
 /* Container Styles */
 .container {
+  font-family: "Nunito", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh; /* Full viewport height */
   padding: 2rem;
-  background-color: #f9f9f9; /* Light background */
+  background-color: #f5e1e5; /* Light background */
 }
+
+.title {
+  font-size: 5rem;  /* Large font size for prominence */
+  font-weight: var(--font-weight-bold); /* Bold for emphasis */
+  text-align: center; /* Center the title */
+  margin: 20px 0; /* Some space around the title */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth hover transition */
+  cursor: default; /* No text select cursor */
+  color: white;
+}
+
+/* Hover effect */
+.title:hover {
+  transform: scale(1.1); /* Slight zoom-in effect */
+}
+
+
 
 /* Heading Styles */
 .h1 {
@@ -18,6 +36,8 @@
   font-size: 2.5rem; /* Responsive heading size */
   color: #333; /* Dark color for contrast */
   text-align: center;
+  font-size: 2rem;
+  color: var(--color-secondary);
 }
 
 /* Input Styles */
@@ -33,7 +53,7 @@
 
 .input:focus {
   outline: none; /* Remove default outline */
-  border-color: #4A90E2; /* Change border color on focus */
+  color: var(--color-secondary); /* Change border color on focus */
 }
 
 /* Button Styles */
@@ -41,7 +61,7 @@
   padding: 0.5rem 2rem;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
-  background-color: #4A90E2; /* Primary button color */
+  color: var(--color-primary); /* Primary button color */
   color: white; /* Text color for button */
   font-weight: bold;
   cursor: pointer; /* Change cursor to pointer */
@@ -49,19 +69,19 @@
 }
 
 .button:disabled {
-  background-color: #ccc; /* Disabled button color */
+  background-color: var(--color-secondary); /* Disabled button color */
   cursor: not-allowed; /* Not allowed cursor */
 }
 
 .button:hover:not(:disabled) {
-  background-color: #357ABD; /* Darker button color on hover */
+  color: var(--color-primary); /* Darker button color on hover */
   transform: translateY(-2px); /* Slight lift effect */
 }
 
 /* Link Styles */
 .link {
   margin-top: 1rem;
-  color: #4A90E2; /* Link color */
+  color: var(--color-secondary); /* Link color */
 }
 
 .link:hover {
@@ -70,7 +90,7 @@
 
 .link span {
   font-weight: bold; /* Bold text for emphasis */
-  color: #27AE60; /* Green color for 'Register' link */
+  color: var(--color-primary); /* Green color for 'Register' link */
 }
 
 /* Small adjustments for the footer link */

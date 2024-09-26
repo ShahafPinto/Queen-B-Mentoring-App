@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <div className={Gstyles.navBar}>
-          <NavBar />
+          <NavBar/>
         </div>
         <div >
           {children}
