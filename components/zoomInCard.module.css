@@ -1,3 +1,45 @@
+/* .fullScreenContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.cardContainer {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.closeButton {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.closeButton:hover {
+    background-color: #0056b3;
+} */
+
+
 .fullScreenContainer {
     position: fixed;
     top: 0;
@@ -21,6 +63,40 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.mentorImg {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover; /* שמירת יחס תמונה */
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* הצללה לתמונה */
+}
+
+.mentorName { /* מחלקה מותאמת ל-h2 */
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.mentorDescription { /* מחלקה מותאמת ל-p */
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.languagesList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.languagesList li {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
 }
 
 .closeButton {
