@@ -1,17 +1,17 @@
 
-
 // 'use client';
 // import Image from 'next/image';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'; // ייבוא אייקון WhatsApp
+// import { faEnvelope } from '@fortawesome/free-solid-svg-icons'; // ייבוא אייקון אימייל
 // import _img from '/app/public/images/pro.jpg'; // ברירת מחדל לתמונה
 // import styles from './zoomInCard.module.css';
 
 // export default function ZoomInCard({ mentor, onClose }) {
 //     // פונקציה שתהפוך את מספר הטלפון לפורמט WhatsApp עם הקידומת של ישראל
 //     const formatPhoneNumberForWhatsApp = (phoneNumber) => {
-//         // הסרת כל התווים שאינם ספרות
 //         let cleanedPhone = phoneNumber.replace(/\D/g, '');
 
-//         // אם המספר מתחיל באפס, מחליפים בקידומת בינלאומית (972 לישראל)
 //         if (cleanedPhone.startsWith('0')) {
 //             cleanedPhone = '972' + cleanedPhone.slice(1);
 //         }
@@ -40,7 +40,7 @@
 //                 {/* תיאור המנטור */}
 //                 <p>{mentor.about ? mentor.about : "No description available"}</p>
 
-//                 {/* פרטי התקשרות - כפתור וואטסאפ */}
+//                 {/* פרטי התקשרות - כפתור וואטסאפ עם אייקון */}
 //                 {mentor.tel ? (
 //                     <a 
 //                         href={`https://wa.me/${formatPhoneNumberForWhatsApp(mentor.tel)}`} 
@@ -48,12 +48,30 @@
 //                         rel="noopener noreferrer"
 //                         className={styles.whatsappButton}
 //                     >
-//                         Contact on WhatsApp
+//                         <FontAwesomeIcon icon={faWhatsapp} size="2x" /> {/* גודל 2x */}
 //                     </a>
 //                 ) : (
 //                     <p>No phone available</p>
 //                 )}
+
+//                 {/* פרטי התקשרות - כפתור אימייל עם אייקון ג'ימייל */}
+//                 {mentor.email ? (
+//                     <a 
+//                         href={`https://mail.google.com/mail/?view=cm&fs=1&to=${mentor.email}`} 
+//                         target="_blank" 
+//                         rel="noopener noreferrer"
+//                         className={styles.emailButton}
+//                     >
+//                         {/* אייקון אימייל */}
+//                         <FontAwesomeIcon icon={faEnvelope} size="2x" /> {/* גודל 2x */}
+//                     </a>
+//                 ) : (
+//                     <p>No email available</p>
+//                 )}
                 
+
+//                 <p><strong>לינקדאין</strong> {mentor.linkedin ? mentor.linkedin : 'לא נמצא לינקדאין'}</p>
+
 //                 {/* פרטי עבודה */}
 //                 <p><strong>Company:</strong> {mentor.company ? mentor.company : 'No company listed'}</p>
 //                 <p><strong>Job Title:</strong> {mentor.job_title ? mentor.job_title : 'No job title available'}</p>
@@ -80,21 +98,19 @@
 // }
 
 
-
 'use client';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'; // ייבוא אייקון WhatsApp
+import { faWhatsapp, faLinkedin } from '@fortawesome/free-brands-svg-icons'; // ייבוא אייקונים WhatsApp ולינקדאין
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'; // ייבוא אייקון אימייל
 import _img from '/app/public/images/pro.jpg'; // ברירת מחדל לתמונה
 import styles from './zoomInCard.module.css';
 
 export default function ZoomInCard({ mentor, onClose }) {
     // פונקציה שתהפוך את מספר הטלפון לפורמט WhatsApp עם הקידומת של ישראל
     const formatPhoneNumberForWhatsApp = (phoneNumber) => {
-        // הסרת כל התווים שאינם ספרות
         let cleanedPhone = phoneNumber.replace(/\D/g, '');
 
-        // אם המספר מתחיל באפס, מחליפים בקידומת בינלאומית (972 לישראל)
         if (cleanedPhone.startsWith('0')) {
             cleanedPhone = '972' + cleanedPhone.slice(1);
         }
@@ -131,13 +147,40 @@ export default function ZoomInCard({ mentor, onClose }) {
                         rel="noopener noreferrer"
                         className={styles.whatsappButton}
                     >
-                        {/* אייקון וואטסאפ */}
                         <FontAwesomeIcon icon={faWhatsapp} size="2x" /> {/* גודל 2x */}
                     </a>
                 ) : (
                     <p>No phone available</p>
                 )}
-                
+
+                {/* פרטי התקשרות - כפתור אימייל עם אייקון ג'ימייל */}
+                {mentor.email ? (
+                    <a 
+                        href={`https://mail.google.com/mail/?view=cm&fs=1&to=${mentor.email}`} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className={styles.emailButton}
+                    >
+                        <FontAwesomeIcon icon={faEnvelope} size="2x" /> {/* גודל 2x */}
+                    </a>
+                ) : (
+                    <p>No email available</p>
+                )}
+
+                {/* פרטי התקשרות - כפתור לינקדאין עם אייקון */}
+                {mentor.linkedin ? (
+                    <a 
+                        href={mentor.linkedin} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className={styles.linkedinButton}
+                    >
+                        <FontAwesomeIcon icon={faLinkedin} size="2x" /> {/* גודל 2x */}
+                    </a>
+                ) : (
+                    <p>No LinkedIn profile available</p>
+                )}
+
                 {/* פרטי עבודה */}
                 <p><strong>Company:</strong> {mentor.company ? mentor.company : 'No company listed'}</p>
                 <p><strong>Job Title:</strong> {mentor.job_title ? mentor.job_title : 'No job title available'}</p>
