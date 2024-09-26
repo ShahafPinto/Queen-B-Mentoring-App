@@ -33,3 +33,18 @@
     box-shadow: 0 0 5px var(--color-secondary);
   }
   
+
+
+  .mentorsCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px;
+    padding: 20px;
+    direction:rtl;
+  }
+  
+  @media (max-width: 600px) {
+    .mentorsCards {
+      grid-template-columns: 1fr; 
+    }
+  }
