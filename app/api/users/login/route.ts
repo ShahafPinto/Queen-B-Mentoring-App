@@ -27,16 +27,13 @@ export async function POST(request: NextRequest)
         // 3- check if the password is correct
         // password is coming from the request
         // user.password is coming from the DB
-        console.log('console.log(user);');
         const validPassword = user.password
 
         // not valid password
         if (validPassword!=reqBody.password)
         {
-            console.log('NOT OKAY')
             return NextResponse.json({ error: 'Invalid password' }, { status: 400 });
         }
-        console.log('OKAY')
         // 4- create the TOKEN data
         //const tokenData = {
         //    id: user._id,
@@ -59,7 +56,6 @@ export async function POST(request: NextRequest)
         // 4.2- send TOKEN to user's cookies
         //response.cookies.set('token', token, { httpOnly: true });
         console.log(response);
-        console.log('ENDENDENDENDENDEN');
         return response;
     }
     catch (error: any)
