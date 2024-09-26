@@ -3,16 +3,17 @@ import styles from "./page.module.css";
 import { useRouter } from 'next/navigation'
 import Gstyles from "../globals.css";
 import Image from 'next/image';
+import { useState } from "react";
 
 //react hookForm
 
 export default function Form() {
     const router = useRouter()
+    const [mentor, setMentor] = useState(false);
+    
     
     const imageArray = [
       '/images/svg/avatar1.svg',
-      '/images/svg/avatar2.svg',
-      '/images/svg/avatar3.svg',
       '/images/svg/avatar4.svg',
       '/images/svg/avatar5.svg',
       '/images/svg/avatar6.svg',
@@ -71,16 +72,12 @@ export default function Form() {
         const userType = event.target.value
         console.log('userType:', userType)
         if (userType === 'student') {
-            document.querySelector('input[name="company"]').disabled = true
-            document.querySelector('input[name="job"]').disabled = true
-            document.querySelector('input[name="js"]').disabled = true
-            document.querySelector('input[name="html"]').disabled = true
-            document.querySelector('input[name="css"]').disabled = true
-            document.querySelector('input[name="python"]').disabled = true
-            document.querySelector('input[name="csharp"]').disabled = true
-            document.querySelector('input[name="java"]').disabled = true
-            document.querySelector('input[name="avatar"]').disabled = true
+            setMentor(false)
         }
+        else{
+          setMentor(true)
+        }
+        
     }
     
   return (
@@ -138,43 +135,41 @@ export default function Form() {
         <fieldset>
           <legend>מהן שפות התכנות בהן תרצי להדריך?</legend>
           <div>
-            <input className={styles.input} type="checkbox" id="js" value="js" name="js"/>
+            <input className={styles.input} type="checkbox" id="js" value="js" name="js" disabled={mentor? false : true}/>
             <label for="js">Java Script</label>
           </div>
           <div>
-            <input className={styles.input} type="checkbox" id="html"  value="html" name="html"/>
+            <input className={styles.input} type="checkbox" id="html"  value="html" name="html" disabled={mentor? false : true}/>
             <label for="html">HTML</label>
           </div>
           <div>
-            <input className={styles.input} type="checkbox" id="css"  value="css" name="css"/>
+            <input className={styles.input} type="checkbox" id="css"  value="css" name="css" disabled={mentor? false : true}/>
             <label for="css">CSS</label>
           </div>
           <div>
-            <input className={styles.input} type="checkbox" id="java"  value="java" name="java"/>
+            <input className={styles.input} type="checkbox" id="java"  value="java" name="java" disabled={mentor? false : true}/>
             <label for="java">JAVA</label>
           </div>
           <div>
-            <input className={styles.input} type="checkbox" id="csharp"  value="csharp" name="csharp"/>
+            <input className={styles.input} type="checkbox" id="csharp"  value="csharp" name="csharp" disabled={mentor? false : true}/>
             <label for="csharp">C#</label>
           </div>
           <div>
-            <input className={styles.input} type="checkbox" id="python"  value="python" name="python"/>
+            <input className={styles.input} type="checkbox" id="python"  value="python" name="python" disabled={mentor? false : true}/>
             <label for="python">Python</label>
           </div>
         </fieldset>
         <label>
           שם החברה בה עובדת כיום:
-          <input className={styles.input} type="text" name="company" autocomplete="off"/>
+          <input className={styles.input} type="text" name="company" autocomplete="off"  disabled={mentor? false : true}/>
         </label>
         <label>
           תפקיד בחברה:
-          <input className={styles.input} type="text" name="job" />
+          <input className={styles.input} type="text" name="job" disabled={mentor? false : true}/>
         </label>
         <div>
           <label for="avatar">בחרי אוואטר</label>
           <div className={styles.gridAvatar}>
-            <img src="http://localhost:3000/images/svg/avatar1.svg" alt="Icon 1" />
-
             {imageArray.map((src, index) => (
               <Image key={index} src={src} alt={`avatar ${index + 1}`} width={50} height={50} />
             ))}
@@ -200,7 +195,6 @@ export default function Form() {
         <button className={styles.button} type="submit" id="submit">לחצי לסיום הרשמה</button>
       </form>
       </div>
-      
     </>
   );
 }
