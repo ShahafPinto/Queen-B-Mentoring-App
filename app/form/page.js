@@ -2,11 +2,25 @@
 import styles from "./page.module.css";
 import { useRouter } from 'next/navigation'
 import Gstyles from "../globals.css";
+import Image from 'next/image';
 
 //react hookForm
 
 export default function Form() {
     const router = useRouter()
+    
+    const imageArray = [
+      '/images/svg/avatar1.svg',
+      '/images/svg/avatar2.svg',
+      '/images/svg/avatar3.svg',
+      '/images/svg/avatar4.svg',
+      '/images/svg/avatar5.svg',
+      '/images/svg/avatar6.svg',
+      '/images/svg/avatar7.svg',
+      '/images/svg/avatar8.svg',
+      '/images/svg/avatar9.svg',
+      '/images/svg/avatar10.svg'
+    ];
 
     const FormAction = async (formData) =>{
         const rawFormData = {
@@ -157,14 +171,14 @@ export default function Form() {
           <input className={styles.input} type="text" name="job" />
         </label>
         <div>
-          <label for="avatar">תמונת פרופיל</label>
-          <input
-            type="file"
-            id="avatar"
-            name="avatar"
-            accept="image/png, image/jpeg"
-            className={styles.input}
-          />
+          <label for="avatar">בחרי אוואטר</label>
+          <div className={styles.gridAvatar}>
+            <img src="http://localhost:3000/images/svg/avatar1.svg" alt="Icon 1" />
+
+            {imageArray.map((src, index) => (
+              <Image key={index} src={src} alt={`avatar ${index + 1}`} width={50} height={50} />
+            ))}
+          </div>
         </div>
 
         <div>

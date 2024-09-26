@@ -12,7 +12,6 @@ export default function Home() {
 
         // Placeholder for form action logic (DB search, user authentication, error handling)
         console.log(rawFormData);
-
         // Implement actual DB search and routing here
     };
 
