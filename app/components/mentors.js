@@ -19,9 +19,8 @@ export default function Mentors({ mentors = [] }) {
     };
 
     return (
-        <div>
-            {/* <h1>List of Mentors</h1> */}
-            <div className={styles.mentorsCards}>
+        <>
+            
                 {mentors.map((mentor) => (
                     <div key={mentor.id} onClick={() => handleMentorClick(mentor)}>
                         <MentorCard 
@@ -32,14 +31,12 @@ export default function Mentors({ mentors = [] }) {
                         />
                     </div>
                 ))}
-            </div>
-
             {selectedMentor && (
                 <ZoomInCard 
                     mentor={selectedMentor} 
                     onClose={closeZoomInCard} 
                 />
             )}
-        </div>
+        </>
     );
 }

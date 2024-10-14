@@ -4,12 +4,13 @@ import styles from "./page.module.css";
 
 export default function Main() {
   return (
-    <div>
-      <h1 className={styles.h1}>המנטוריות שלנו</h1>
-      <div className={styles.search}>
-          <SearchBar/>
+    <div className={styles.children}>
+      <div className={styles.container}>
+        <h1 className={styles.h1}>המנטוריות</h1>
+        <div className={styles.search}>
+            <SearchBar/>
+        </div>
       </div>
-        <Mentors />
     </div>
   );
 }

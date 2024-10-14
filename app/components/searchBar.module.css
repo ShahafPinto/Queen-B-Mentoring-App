@@ -1,9 +1,10 @@
 /* searchBar.module.css */
-
+.div{
+  display: inline;
+}
 .searchBarContainer {
     padding: 20px;
     background-color: var(--color-background);
-    direction: rtl;
   }
   
   .searchBarHeader {
@@ -12,7 +13,9 @@
     color: var(--color-primary);
     margin-bottom: 20px;
   }
-  
+  .searchInputC{
+    display:flex;
+  }
   .searchInput {
     padding: 10px;
     font-size: 16px;
@@ -21,6 +24,9 @@
     border: 1px solid var(--color-primary);
     border-radius: 5px;
     outline: none;
+    margin-right: auto;
+    margin-left: auto;
+    align-items: center;
   }
   
   .searchInput::placeholder {
@@ -36,11 +42,18 @@
 
 
   .mentorsCards {
-    display: grid;
+    
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+    
+    /* display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
     gap: 20px;
     padding: 20px;
-    direction:rtl;
+    direction:rtl; */
   }
   
   @media (max-width: 600px) {
