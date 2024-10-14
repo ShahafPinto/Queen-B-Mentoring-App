@@ -3,9 +3,7 @@
     --foreground: #171717;
     border: 0.0625rem solid #ccc;
     padding: 1.25rem;
-    /* margin: 1.25rem; */
     border-radius: 0.625rem;
-    width: 100%; /* שומר על רוחב של 100% */
     max-width: 250px; /* מקסימום רוחב לכרטיסייה */
     min-height: 450px; /* העלאה של גובה מינימלי */
     height: auto; /* מאפשר גובה דינמי */

@@ -10,26 +10,24 @@
   margin-top: 20px;
   margin-bottom: 0;
 }
-.children{
-  
-  margin-top: 60px; /* מרווח כדי למנוע חפיפה עם ה-navbar */
 
+.children {
+  margin-top: 60px; /* מרווח כדי למנוע חפיפה עם ה-navbar */
   background-color: #f4f4f4;
   min-height: 100vh; /* כדי שתמיד תופיע מגילה */ 
-  
 }
+
 .search {
   display: flex;
   justify-content: center; 
-   
   margin-bottom: 20px;
   gap: 0.25rem;
 }
+
 .container {
   font-family: "Nunito", sans-serif;
   display: flex;
   flex-direction: column;
-  
   justify-content: center;
   min-height: 100vh; /* Full viewport height */
   padding: 2rem;
