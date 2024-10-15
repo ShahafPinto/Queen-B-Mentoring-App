@@ -1,14 +1,8 @@
-/* components/NavBar.module.css */
-
-
-
 .logoContainer {
     display: flex;
     align-items: center; /* Center logo vertically */
     flex: 1; /* Flex 1 allows logo to take available space */
 }
-
-
 
 .logo {
     height: 50px; /* Set height of the logo */
@@ -43,17 +37,15 @@
     background-color: #8500b5; /* Darker background on hover */
 }
 
-
 .navbar {
-    position: relative;
     position: fixed;
     display: flex;
     justify-content: space-between; /* Space between logo and nav links */
     align-items: center; /* Center items vertically */
     background-color: #ee849d;
-    padding: 1.5rem;
     height: 60px; /* Set height to ensure proper spacing */
     width: 100%;
     font-family: "Nunito", sans-serif;
-    top:0;
-}
+    top: 0;
+    left:0%;
+  }

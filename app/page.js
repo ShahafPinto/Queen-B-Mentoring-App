@@ -2,14 +2,13 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import {useRouter} from "next/navigation";
-import React, { useEffect } from 'react';
+import React, { useEffect , useState} from 'react';
 import axios from 'axios'; // Ensure axios is imported
-
 
 export default function Home() {
     const router = useRouter();
 
-    const [user, setUser] = React.useState({
+    const [user, setUser] = useState({
         email: '',
         password: '',
     });

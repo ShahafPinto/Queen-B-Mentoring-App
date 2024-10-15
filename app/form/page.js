@@ -3,7 +3,6 @@ import styles from "./page.module.css";
 import { useRouter } from 'next/navigation'
 import Image from 'next/image';
 import { useState } from "react";
-
 //react hookForm
 
 export default function Form() {

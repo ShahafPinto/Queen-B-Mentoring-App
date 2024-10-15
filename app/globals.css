@@ -5,8 +5,6 @@
   --color-accent2: #ffffff;
   --color-light: #f3d7dc;
   --color-background: #f5e1e5;
-
-  
   --font-weight-light: 200;
   --font-weight-normal: 400;
   --font-weight-bold: 600;
@@ -23,7 +21,6 @@
 }
 
 .container {
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,24 +29,25 @@
   font-family: Arial, sans-serif;
   direction: rtl;
 }
+
 .navbar {
   position: fixed;
   display: flex;
   justify-content: space-between; /* Space between logo and nav links */
   align-items: center; /* Center items vertically */
   background-color: #ee849d;
-  padding: 1.5rem;
   height: 60px; /* Set height to ensure proper spacing */
   width: 100%;
   font-family: "Nunito", sans-serif;
   top: 0;
   left:0%;
 }
+
 .children{
   margin-top: 60px; /* מרווח כדי למנוע חפיפה עם ה-navbar */
   padding: 20px;
   background-color: #f4f4f4;
-  min-height: 100vh; /* כדי שתמיד תופיע מגילה */  
+   
 }
 
 .fontLight {

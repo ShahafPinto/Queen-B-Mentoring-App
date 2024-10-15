@@ -7,7 +7,7 @@
   cursor: default;
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  margin-top: 20px;
+  margin-top: 0px;
   margin-bottom: 0;
 }
 
@@ -37,3 +37,16 @@
 }
 
 
+.navbar {
+  position: fixed;
+  display: flex;
+  justify-content: space-between; /* Space between logo and nav links */
+  align-items: center; /* Center items vertically */
+  background-color: #ee849d;
+  padding: 1.5rem;
+  height: 60px; /* Set height to ensure proper spacing */
+  width: 100%;
+  font-family: "Nunito", sans-serif;
+  top: 0;
+  left:0%;
+}
