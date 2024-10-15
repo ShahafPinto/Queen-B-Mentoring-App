@@ -43,6 +43,7 @@
   width: 100%;
   font-family: "Nunito", sans-serif;
   top: 0;
+  left:0%;
 }
 .children{
   margin-top: 60px; /* מרווח כדי למנוע חפיפה עם ה-navbar */
