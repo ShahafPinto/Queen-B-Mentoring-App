@@ -1,50 +1,51 @@
 /* searchBar.module.css */
-
 .searchBarContainer {
     padding: 20px;
     background-color: var(--color-background);
-    direction: rtl;
   }
   
-  .searchBarHeader {
-    font-family: "Nunito", sans-serif;
-    font-weight: var(--font-weight-bold);
-    color: var(--color-primary);
-    margin-bottom: 20px;
-  }
-  
-  .searchInput {
-    padding: 10px;
-    font-size: 16px;
-    width: 100%;
-    max-width: 500px;
-    border: 1px solid var(--color-primary);
-    border-radius: 5px;
-    outline: none;
-  }
-  
-  .searchInput::placeholder {
-    color: var(--color-accent1);
-    font-family: "Nunito", sans-serif;
-  }
-  
-  .searchInput:focus {
-    border-color: var(--color-secondary);
-    box-shadow: 0 0 5px var(--color-secondary);
-  }
-  
+.searchBarHeader {
+  font-family: "Nunito", sans-serif;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: 20px;
+}
 
+.searchInputC {
+  display:flex;
+}
 
-  .mentorsCards {
+.searchInput {
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid var(--color-primary);
+  border-radius: 5px;
+  outline: none;
+  margin-right: auto;
+  margin-left: auto;
+  align-items: center;
+}
+
+.searchInput::placeholder {
+  color: var(--color-accent1);
+  font-family: "Nunito", sans-serif;
+}
+
+.searchInput:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 5px var(--color-secondary);
+}
+
+.mentorsCards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    gap: 20px;
-    padding: 20px;
-    direction:rtl;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px
+}
+
+@media (max-width: 600px) {
+  .mentorsCards {
+    grid-template-columns: 1fr; 
   }
-  
-  @media (max-width: 600px) {
-    .mentorsCards {
-      grid-template-columns: 1fr; 
-    }
-  }
+}

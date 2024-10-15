@@ -42,6 +42,14 @@
   height: 60px; /* Set height to ensure proper spacing */
   width: 100%;
   font-family: "Nunito", sans-serif;
+  top: 0;
+  left:0%;
+}
+.children{
+  margin-top: 60px; /* מרווח כדי למנוע חפיפה עם ה-navbar */
+  padding: 20px;
+  background-color: #f4f4f4;
+  min-height: 100vh; /* כדי שתמיד תופיע מגילה */  
 }
 
 .fontLight {
@@ -67,3 +75,4 @@ body {
 .pages{
   margin-top: 500rem;
 }
+

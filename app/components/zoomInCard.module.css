@@ -1,56 +1,23 @@
-/* .fullScreenContainer {
+.fullScreenContainerO{
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8); 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* רקע כהה לשכבת החפיפה */
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     z-index: 1000;
 }
-
-.cardContainer {
-    background-color: #fff;
-    border-radius: 1rem;
-    padding: 2rem;
-    width: 90%;
-    max-width: 800px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.closeButton {
-    margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.closeButton:hover {
-    background-color: #0056b3;
-} */
-
 
 .fullScreenContainer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.8); /* רקע כהה */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+    width: 60%; 
+    max-height: 80vh;
+    border-radius: 8px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .cardContainer {

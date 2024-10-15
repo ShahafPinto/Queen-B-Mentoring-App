@@ -1,7 +1,6 @@
 'use client'
 import styles from "./page.module.css";
 import { useRouter } from 'next/navigation'
-
 import Image from 'next/image';
 import { useState } from "react";
 
@@ -48,7 +47,6 @@ export default function Form() {
         console.log( "======================="),
         console.log('rawFormData:', rawFormData)
         
-        
         try{
             const response = await fetch('/api/register', {
                 method: 'POST',
@@ -82,9 +80,7 @@ export default function Form() {
   return (
     <>
     <div className={styles.container}>
-      
-        <h1 className={styles.title}>טופס הרשמה</h1>
-      
+      <h1 className={styles.title}>טופס הרשמה</h1>
       
       <form className={styles.form} action={FormAction} autoComplete="on">
         <fieldset className="formGroup">

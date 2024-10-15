@@ -1,11 +1,8 @@
 'use client';
-
-import Image from 'next/image';
-//import _img from '@/images/pro.jpg'; 
+import Image from 'next/image'; 
 import styles from "./components.module.css";
 
-// קבלת הפרטים של המנטור דרך props
-export default function MentorCard({ mentorName, mentorDescription, languages = [], avatarUrl }) {
+export default function MentorCard({ mentorName, mentorDescription, languages, avatarUrl }) {
     return (
         <div className={styles.mentorCard}>
             <Image 
@@ -18,16 +15,16 @@ export default function MentorCard({ mentorName, mentorDescription, languages = 
                 className={styles.mentorImg}
                 priority={true} 
             />
-            <h2>{mentorName}</h2>
-            <p>{mentorDescription}</p>
-            <h3>שפות תכנות:</h3>
+            <div className={styles.cardName}>{mentorName}</div>
+            <p className={styles.cardAbout}>{mentorDescription}</p>
+            <div className={styles.cardLang}>שפות תכנות:</div>
             <ul className={styles.languagesList}>
                 {languages.length > 0 ? (
-                    languages.map((language, index) => (
+                    languages.filter((lang)=>lang!=='null').map((language, index) => (
                         <li key={index} className={styles.languageItem}>{language}</li>
                     ))
                 ) : (
-                    <li>לא נמצאו שפות</li>
+                    <div className={styles.cardAbout}>לא נמצאו שפות</div>
                 )}
             </ul>
         </div>

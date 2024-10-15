@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
         <div className={styles.navbar}>
           <NavBar/>
         </div>
-        <div>
+        <div className={styles.children}>
           {children}
         </div>
       </body>

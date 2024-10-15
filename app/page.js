@@ -16,6 +16,8 @@ export default function Home() {
 
     const [buttonDisabled, setButtonDisabled] = React.useState(false);
     const [loading, setLoading] = React.useState(false);
+    const [failLogIn, setfailLogIn] = React.useState(false);
+    
 
     const onLogin = async () => {
         try {
@@ -27,6 +29,8 @@ export default function Home() {
             if (response.status === 200) { // Assuming 200 means login success
                 router.push('/homePage');
             } else {
+                
+                setfailLogIn(true);
                 console.log('Login failed');
             }
         } catch (error) {
@@ -34,6 +38,7 @@ export default function Home() {
             if (error.response && error.response.status === 400) {
                 // Handle 400 errors specifically (like invalid credentials)
                 console.error('Login failed:', error.response.data);
+                setfailLogIn(true);
             } else {
                 // Handle other errors like network issues
                 console.error('An error occurred:', error.message);
@@ -60,7 +65,7 @@ export default function Home() {
                 {'Queens Match'}
             </h1>
             <h1 className={styles.h1}>
-                {loading ? "We're logging you in..." : 'ברוכה הבאה'}
+                ברוכה הבאה
             </h1>
             <input
                 className={styles.input}
@@ -79,7 +84,9 @@ export default function Home() {
                 onChange={(e) => setUser({ ...user, password: e.target.value })}
                 placeholder="סיסמה"
             />
-
+            
+            <div className={styles.logInProcess}>{loading && "We're logging you in..."}</div>
+            <div className={styles.errorM}>{failLogIn && "שם המשתמש או הסיסמא שגויים, אנא נסי שוב"}</div>
             <button
                 onClick={onLogin}
                 className={styles.button}
@@ -90,9 +97,9 @@ export default function Home() {
 
             <Link href="/form">
                 <p className={styles.link}>
-                    עוד אין לך משתמש?
+                     עוד אין לך משתמש?
                     <span className={styles.link}>
-                        הירשמי
+                        &nbsp;להרשמה
                     </span>
                 </p>
             </Link>

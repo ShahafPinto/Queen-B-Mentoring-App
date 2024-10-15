@@ -3,11 +3,9 @@
     --foreground: #171717;
     border: 0.0625rem solid #ccc;
     padding: 1.25rem;
-    /* margin: 1.25rem; */
     border-radius: 0.625rem;
-    width: 100%; /* שומר על רוחב של 100% */
     max-width: 250px; /* מקסימום רוחב לכרטיסייה */
-    min-height: 450px; /* העלאה של גובה מינימלי */
+    min-height: 370px; /* העלאה של גובה מינימלי */
     height: auto; /* מאפשר גובה דינמי */
     text-align: center;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* שיפור ה- box-shadow */
@@ -17,9 +15,20 @@
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+}
+.cardName {
+    font-size: 1.2rem; /* Responsive heading size */
+    color: rgb(227, 15, 188);
+}
+.cardLang {
+    font-size: 1rem; /* Responsive heading size */
+    color: rgb(30, 32, 150);
 }
 
+.cardAbout {
+    font-size: 0.8rem; /* Responsive heading size */
+    color: rgb(30, 32, 150);
+}
 /* גודל קבוע לתמונות */
 .mentorImg {
     width: 120px; /* רוחב קבוע לתמונה */
@@ -75,4 +84,8 @@
     font-size: 0.75rem;
     box-shadow: 0.0625rem 0.0625rem 0.25rem rgba(0, 0, 0, 0.1);
     margin: 0.25rem; /* הקטנת הרווחים בין התגים */
+}
+
+.clickToZoomMentor:hover {
+    cursor: pointer;
 }

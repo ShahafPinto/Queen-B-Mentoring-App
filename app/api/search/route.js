@@ -11,7 +11,7 @@ export async function GET(request) {
       SELECT * FROM users
       WHERE LOWER(first_name) LIKE $1 OR
        LOWER(family_name) LIKE $1 OR EXISTS 
-       (SELECT 1 FROM json_array_elements_text(programing_languages) as pl
+       (SELECT 1 FROM json_array_elements_text(programming_languages) as pl
        WHERE LOWER(pl) LIKE $1) OR
        LOWER(job_title) LIKE $1
       `;

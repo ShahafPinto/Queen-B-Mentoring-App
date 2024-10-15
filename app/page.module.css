@@ -30,14 +30,10 @@
   transform: scale(1.1); /* Slight zoom-in effect */
 }
 
-
-
 /* Heading Styles */
 .h1 {
-  padding: 2rem 0;
   margin-bottom: 2rem;
-  font-size: 2.5rem; /* Responsive heading size */
-  color: #333; /* Dark color for contrast */
+  font-size: 2.5rem;
   text-align: center;
   font-size: 2rem;
   color: var(--color-secondary);
@@ -92,6 +88,8 @@
 .link span {
   font-weight: bold; /* Bold text for emphasis */
   color: var(--color-primary); /* Green color for 'Register' link */
+  text-decoration-color: rgb(0, 255, 81); /* צבע הקו התחתון */
+  text-decoration-thickness: 2px; /* עובי הקו */
 }
 
 /* Small adjustments for the footer link */
@@ -100,19 +98,17 @@
   opacity: 0.5; /* Light opacity */
 }
 
-
-
-/* Sticky NavBar CSS */
-.navbar {
-  position: sticky; /* Makes the NavBar sticky */
-  top: 0; /* Stick to the top */
-  width: 100px; /* Full width */
-  background-color: #fff; /* White background for visibility */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  z-index: 1000; /* Ensure it stays above other content */
-  padding: 1rem 2rem; /* Padding for the navbar */
-  display: flex; /* Flexbox layout */
-  justify-content: space-between; /* Space between items */
-  align-items: center; /* Center items vertically */
+.errorM {
+  font-size: 0.9rem; /* Responsive heading size */
+  text-align: center;
+  color: red;
+  margin-bottom: 1rem;
 }
 
+.logInProcess {
+  margin-bottom: 1rem;
+  font-size: 2rem; /* Responsive heading size */
+  text-align: center;
+  font-size: 2rem;
+  color: var(--color-secondary);
+}
