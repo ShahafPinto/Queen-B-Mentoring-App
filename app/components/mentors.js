@@ -2,9 +2,10 @@
 import { useState } from "react";
 import MentorCard from "./mentorCard";
 import ZoomInCard from "./zoomInCard";
+import styles from "./components.module.css";
 
 export default function Mentors({ mentors = [] }) {
-  const [selectedMentor, setSelectedMentor] = useState(null);
+  const [selectedMentor, setSelectedMentor] = useState(false);
 
   const handleMentorClick = (mentor) => {
     setSelectedMentor(mentor);
@@ -17,7 +18,7 @@ export default function Mentors({ mentors = [] }) {
   return (
     <>
       {mentors.map((mentor) => (
-        <div key={mentor.id} onClick={() => handleMentorClick(mentor)}>
+        <div className={styles.clickToZoomMentor} key={mentor.id} onClick={() => handleMentorClick(mentor)}>
           <MentorCard
             mentorName={`${mentor.first_name} ${
               mentor.family_name ? mentor.family_name : ""
