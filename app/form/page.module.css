@@ -1,34 +1,16 @@
-/* .h1 {
-    align-content: center;
-    text-align: center;
-  } */
-
-  /* .form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-    direction: rtl;
-  } */
-
-  /* page.module.css */
 .title {
   color:white;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
   text-align: center;
-  margin: 10px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   letter-spacing: 1px;
   line-height: 1.2;
-  margin-top: 120px;
-  cursor: default; /* Prevents the text selection cursor on hover */
+  margin-top: 90px;
 }
 
 .title:hover {
-  transform: scale(1.1); /* Slightly increases the size */
-
+  transform: scale(1.1); 
 }
 
 .container {
@@ -41,16 +23,6 @@
   direction: rtl;
   margin-top: -20px;
 }
-
-/* .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #f5e1e5;
-  font-family: Arial, sans-serif;
-} */
 
 .h1 {
   font-size: 2.5rem;
@@ -75,7 +47,12 @@
 .formGroup {
   margin-bottom: 1.5rem;
 }
-
+.inline {
+  display: inline-block;
+  vertical-align: middle; 
+  margin-right: 10px;
+  direction: ltr;
+}
 .label {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
@@ -109,18 +86,4 @@
 
 .button:hover {
   background-color: #edb4c1;
-}
-
-
-.navbar {
-  position: fixed;
-  display: flex;
-  justify-content: space-between; /* Space between logo and nav links */
-  align-items: center; /* Center items vertically */
-  background-color: #ee849d;
-  height: 60px; /* Set height to ensure proper spacing */
-  width: 100%;
-  font-family: "Nunito", sans-serif;
-  top: 0;
-  left:0%;
 }
