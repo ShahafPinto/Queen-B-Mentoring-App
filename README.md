@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Queens Match
 
-## Getting Started
+This project was developed in response to the need expressed by the QueenB organization for a user-friendly platform that facilitates mentorship matching between mentors and mentees.
 
-First, run the development server:
+## Installation
+
+```bash
+git clone https://github.com/ShahafPinto/Queen-B-Mentoring-App.git
+git install
+```
+
+## Running the project
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+* Next.Js
+* Js
+* PostgreSQL
+* CSS-Modules
+* Docker
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Next Steps
 
-## Learn More
+* Login Page: Add "Forgot Password" option
+* Registration Page: Improve design, add error messages for user feedback
+* Conditional Fields: Hide non-relevant fields entirely when the user is a mentee
+* Required Fields: Add asterisks (*) to required fields
+* Mentorship Page: Add filtering options in addition to the search feature, display only mentor profiles
+* Navbar Page: Investigate ways to share information with a layout component that only runs on the server and then update the username
+* Profile Page: Add profile update functionality
 
-To learn more about Next.js, take a look at the following resources:
+## Credits
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Project concept and guidance: QueenB Organization & Appsflyer Company
+- Development Team: Shahaf Pinto, Iska Yanir, Lior Kashi, Rotem Minai
