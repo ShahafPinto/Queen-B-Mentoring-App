@@ -4,11 +4,11 @@
     border: 0.0625rem solid #ccc;
     padding: 1.25rem;
     border-radius: 0.625rem;
-    max-width: 250px; /* מקסימום רוחב לכרטיסייה */
-    min-height: 370px; /* העלאה של גובה מינימלי */
-    height: auto; /* מאפשר גובה דינמי */
+    max-width: 250px;
+    min-height: 395px; 
+    height: auto;
     text-align: center;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* שיפור ה- box-shadow */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
     overflow: hidden;
     background: var(--background);
     color: var(--foreground);
