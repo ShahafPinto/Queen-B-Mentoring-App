@@ -5,7 +5,7 @@ import Image from 'next/image';
 import styles from "./components.module.css";
 
 // קבלת הפרטים של המנטור דרך props
-export default function MentorCard({ mentorName, mentorDescription, languages = [], avatarUrl }) {
+export default function MentorCard({ mentorName, mentorDescription, languages, avatarUrl }) {
     return (
         <div className={styles.mentorCard}>
             <Image 

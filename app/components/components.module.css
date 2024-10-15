@@ -5,7 +5,7 @@
     padding: 1.25rem;
     border-radius: 0.625rem;
     max-width: 250px; /* מקסימום רוחב לכרטיסייה */
-    min-height: 450px; /* העלאה של גובה מינימלי */
+    min-height: 500px; /* העלאה של גובה מינימלי */
     height: auto; /* מאפשר גובה דינמי */
     text-align: center;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* שיפור ה- box-shadow */

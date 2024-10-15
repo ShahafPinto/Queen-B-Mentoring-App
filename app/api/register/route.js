@@ -26,7 +26,7 @@ export async function POST(req) {
       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
     `, [
       user_type, first_name, family_name, city, email, tel, linkedin, about,
-      `{${programming_languages.map(() => "NULL").join(",")}}`, company, job_title, username, password
+      `{${programming_languages.map(lang => `"${lang}"`).join(",")}}`, company, job_title, username, password
     ]);
 
     return new Response(JSON.stringify({ message: 'User registered successfully', result }), {
