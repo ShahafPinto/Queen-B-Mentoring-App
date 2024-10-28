@@ -64,7 +64,7 @@ export default function Form() {
     }
   };
 
-  const userTypeCleckedHandler = (event) => {
+  const userTypeClickedHandler = (event) => {
     const userType = event.target.value;
     console.log("userType:", userType);
     if (userType === "student") {
@@ -78,7 +78,6 @@ export default function Form() {
     <>
       <div className={styles.container}>
         <h1 className={styles.title}>טופס הרשמה</h1>
-
         <form className={styles.form} action={FormAction} autoComplete="on">
           <fieldset className={styles.formGroup}>
             <legend>מי את ?</legend>
@@ -90,7 +89,7 @@ export default function Form() {
                   id="mentor"
                   name="user type"
                   value="mentor"
-                  onClick={userTypeCleckedHandler}
+                  onClick={userTypeClickedHandler}
                 />
                 <label for="mentor">מנטורית</label>
               </div>
@@ -100,7 +99,7 @@ export default function Form() {
                   id="student"
                   name="user type"
                   value="student"
-                  onClick={userTypeCleckedHandler}
+                  onClick={userTypeClickedHandler}
                   className={styles.input}
                 />
                 <label for="student">מנטית</label>

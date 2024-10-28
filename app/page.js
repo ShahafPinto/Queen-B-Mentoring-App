@@ -55,8 +55,6 @@ export default function Home() {
         }
     }, [user]);
 
-    console.log(user);
-
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>
